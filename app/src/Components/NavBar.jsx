@@ -8,15 +8,18 @@ import TextsmsIcon from "@mui/icons-material/Textsms";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import AppsIcon from "@mui/icons-material/Apps";
 import { Divider } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
     <div className="header">
       <div className="header__left">
-        <img
-          src="https://www.svgrepo.com/show/157006/linkedin.svg"
-          alt="logo"
-        />
+        <Link to={"/"} className="lilogo">
+          <img
+            src="https://www.svgrepo.com/show/157006/linkedin.svg"
+            alt="logo"
+          />
+        </Link>
 
         <div className="header__search">
           <SearchIcon />
@@ -25,17 +28,24 @@ function NavBar() {
       </div>
 
       <div className="header__right">
-        <HeaderOption Icon={HomeIcon} title="Home" />
+        <Link to={"/"}>
+          {" "}
+          <HeaderOption Icon={HomeIcon} title="Home" />
+        </Link>
         <HeaderOption Icon={SupervisorAccountIcon} title="My Network" />
         <HeaderOption Icon={BusinessCenterIcon} title="Jobs" />
         <HeaderOption Icon={TextsmsIcon} title="Messaging" />
         <HeaderOption Icon={NotificationsIcon} title="Notifications" />
-        <HeaderOption
-          avatar="https://avatars.githubusercontent.com/u/114650763?v=4"
-          title="Me"
-        />
+        <Link to={"/profile"}>
+          <HeaderOption
+            avatar="https://avatars.githubusercontent.com/u/114650763?v=4"
+            title="Me"
+          />
+        </Link>
         <Divider className="headerOption__divider" orientation="vertical" />
+
         <HeaderOption Icon={AppsIcon} title="Work" />
+
         <a
           className="headerOption__premium"
           href="https://premium.linkedin.com/"
