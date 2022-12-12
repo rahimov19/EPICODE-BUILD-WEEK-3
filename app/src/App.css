@@ -1,0 +1,131 @@
+/* Footer css */
+
+#footer {
+  margin-left: 400px;
+  max-width: 77rem;
+}
+
+#footer img {
+  width: 80px;
+}
+
+#footer a,
+#footer p,
+#footer .form-label,
+#footer .form-control {
+  color: #868686;
+  text-transform: capitalize;
+  font-size: 0.8rem;
+  font-weight: bolder;
+}
+
+#footer a:hover {
+  text-decoration: underline;
+  color: #0a66c2;
+}
+
+#footer-settings a {
+  font-weight: bold;
+}
+
+#footer .col-lg-3 {
+  max-width: 100%;
+}
+
+#footer i {
+  color: #666666;
+}
+
+#footer form {
+  width: 220px;
+}
+
+/* !RightSidebar css */
+#right-sidebar,
+#side-footer {
+  position: relative;
+  width: 250px;
+
+  top: -2px;
+  left: 90rem;
+}
+.right__side__footer {
+  margin-left: 35px;
+}
+#right-sidebar .h5 {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #434343;
+}
+
+#right-sidebar h6 {
+  font-size: 0.9rem;
+  color: #434343;
+}
+
+#right-sidebar p {
+  font-size: 0.7rem;
+  color: #868686;
+}
+
+#right-sidebar .follow{
+    margin: 7px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#right-sidebar button {
+  background-color: transparent;
+  border-radius: 25px;
+  border: 1px solid #434343;
+  color: var(--gray-text);
+  font-weight: bold;
+  letter-spacing: 0.08rem;
+  font-size: 0.9rem;
+   height: 38px;
+ /* width: 150px; */
+ text-align: center;
+}
+
+#right-sidebar button:hover {
+  background-color: var(--bg-color);
+  border: 2px solid #434343;
+}
+
+#right-sidebar .card-footer {
+  background: none;
+  border: none;
+}
+
+#right-sidebar .card-footer > p {
+  color: #868686;
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+
+#right-sidebar .card-footer > p:hover {
+  cursor: pointer;
+  background-color: var(--bg-color);
+}
+
+#right-sidebar #follow img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#side-footer a {
+  color: #868686;
+  text-transform: capitalize;
+  font-size: 0.7rem;
+}
+
+#side-footer p {
+  color: #434343;
+  text-transform: capitalize;
+  font-size: 0.7rem;
+}
+
+#side-footer #linkedin-logo {
+  height: 14px;
+}
