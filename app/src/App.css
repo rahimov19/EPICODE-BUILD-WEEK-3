@@ -1,0 +1,121 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
+
+body {
+  background-color: #f3f2ef !important;
+}
+#main {
+  /* background-color: white; */
+  min-height: 100vh;
+  padding: 0;
+  margin-top: 1em;
+  border-radius: 20px 20px 0 0;
+}
+#ava {
+  width: 8em;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -3em;
+  left: 2em;
+  border: 5px solid white;
+}
+#cover {
+  position: relative;
+  width: 100%;
+  height: 20em;
+  border-radius: 20px 20px 0 0;
+}
+#userName {
+  padding-top: 5em;
+}
+#images {
+  position: relative;
+  background-color: white;
+}
+.companies img {
+  width: 60px;
+  margin-right: 1em;
+}
+.companies {
+  display: flex;
+  margin-bottom: 1em;
+  justify-content: center;
+  align-items: center;
+}
+
+#companiesCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#userbuttons button {
+  margin-right: 0.8em;
+  font-weight: 600;
+  border-radius: 20px;
+}
+#userbutton1 {
+  background-color: #004182;
+  border-color: #004182;
+}
+#userbutton2 {
+  background-color: transparent;
+  border-color: #004182;
+  color: #004182;
+}
+#userbutton3 {
+  background-color: transparent;
+  border-color: #928f8b;
+  color: #928f8b;
+}
+.iconquestionmark {
+  padding: 0;
+}
+.hr {
+  background-color: #928f8b;
+  margin-right: 1.5em;
+}
+.rightpart {
+  color: #928f8b;
+}
+.otherUsers {
+  display: flex;
+  flex-direction: column;
+}
+.otherUsersPic img {
+  width: 50px;
+  border-radius: 50%;
+}
+.otherUsersDesc p {
+  padding: 0;
+  margin: 0;
+  padding-left: 0.6em;
+}
+.othersCol {
+  color: black;
+  margin-top: 2em;
+}
+.bgWhite {
+  background-color: white;
+}
+#mainrow {
+  margin: 0;
+  border-radius: 0 0 10px 10px;
+}
+.editbutton {
+  position: absolute;
+  right: 2em;
+  top: 1.5em;
+  background-color: #f3f2ef;
+  padding-block: 0.6em;
+  padding-inline: 0.8em;
+  border-radius: 50%;
+  color: #004182;
+  cursor: pointer;
+}
+#required {
+  font-size: 0.7em;
+  color: #928f8b;
+}
+.otherUserData {
+  display: flex;
+  margin-bottom: 1em;
+}
