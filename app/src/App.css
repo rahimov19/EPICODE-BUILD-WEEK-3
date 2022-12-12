@@ -11,7 +11,7 @@
   z-index: 999;
   padding-left: 6vw;
   padding-right: 6vw;
-  background-color: #eef3f8;
+  background-color: white;
 }
 
 body {
@@ -225,6 +225,11 @@ body {
 
 .headerOption:hover {
   color: black;
+}
+
+#demo-positioned-menu {
+  top: 38px;
+  left: -27vw;
 }
 
 /* Footer css */

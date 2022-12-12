@@ -9,6 +9,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import AppsIcon from "@mui/icons-material/Apps";
 import { Divider } from "@mui/material";
 import { Link } from "react-router-dom";
+import HeaderProfile from "./HeaderProfile";
 
 function NavBar() {
   return (
@@ -37,7 +38,7 @@ function NavBar() {
         <HeaderOption Icon={TextsmsIcon} title="Messaging" />
         <HeaderOption Icon={NotificationsIcon} title="Notifications" />
         <Link to={"/profile"}>
-          <HeaderOption
+          <HeaderProfile
             avatar="https://avatars.githubusercontent.com/u/114650763?v=4"
             title="Me"
           />
