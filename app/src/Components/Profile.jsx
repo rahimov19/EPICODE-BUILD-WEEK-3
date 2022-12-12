@@ -1,14 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from "react";
+import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  saveUserAction,
-  saveUsersAction,
-  guestUserAction,
-} from "../Redux/Actions";
+import { guestUserAction } from "../Redux/Actions";
 import { useNavigate } from "react-router-dom";
 import EditUser from "./EditUser";
+import FooterPart from "./FooterPart";
 
 export default function Profile() {
   const navigate = useNavigate();
@@ -16,60 +13,9 @@ export default function Profile() {
   const user = useSelector((state) => state.user.user);
   const users = useSelector((state) => state.user.users);
 
-  useEffect(() => {
-    fetchUser();
-    fetchAllUsers();
-  }, []);
-
   function guestPage(profile) {
     dispatch(guestUserAction(profile, profile._id));
     navigate("/guest/" + profile._id);
-  }
-
-  async function fetchAllUsers() {
-    try {
-      let response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/`,
-        {
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk2ZjAzMWM5NmRmYjAwMTUyMWE1YmIiLCJpYXQiOjE2NzA4MzYyODAsImV4cCI6MTY3MjA0NTg4MH0.-mjIeGuDeV798UyGFGMsc5ORRw1nL5qqVP2qkCqN7MY",
-          },
-        }
-      );
-      if (response.ok) {
-        let data = await response.json();
-        dispatch(saveUsersAction(data));
-        console.log(users);
-      } else {
-        console.log("error");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  async function fetchUser() {
-    try {
-      let response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/me`,
-        {
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk2ZjAzMWM5NmRmYjAwMTUyMWE1YmIiLCJpYXQiOjE2NzA4MzYyODAsImV4cCI6MTY3MjA0NTg4MH0.-mjIeGuDeV798UyGFGMsc5ORRw1nL5qqVP2qkCqN7MY",
-          },
-        }
-      );
-      if (response.ok) {
-        let data = await response.json();
-        dispatch(saveUserAction(data));
-        console.log(data);
-      } else {
-        console.log("error");
-      }
-    } catch (error) {
-      console.log(error);
-    }
   }
 
   return (
@@ -170,6 +116,7 @@ export default function Profile() {
           </Col>
         </Row>
       </Container>
+      <FooterPart />
     </>
   );
 }

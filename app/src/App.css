@@ -1,4 +1,3 @@
-
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
 /* Header CSS */
 .header {
@@ -12,6 +11,7 @@
   z-index: 999;
   padding-left: 6vw;
   padding-right: 6vw;
+  background-color: #eef3f8;
 }
 
 body {
@@ -98,11 +98,17 @@ body {
   width: 50px;
   border-radius: 50%;
 }
+.otherUsersPic2 {
+  width: 60px;
+  height: 60px;
+  margin-top: 0.4em;
+}
 .otherUsersDesc p {
   padding: 0;
   margin: 0;
   padding-left: 0.6em;
 }
+
 .othersCol {
   color: black;
   margin-top: 2em;
@@ -129,11 +135,16 @@ body {
   font-size: 0.7em;
   color: #928f8b;
 }
-.otherUserData {
+.otherUserData,
+.otherUserData2 {
   display: flex;
-  margin-bottom: 1em;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 0.4em;
 }
-
+.otherUserData:hover {
+  background-color: #f3f2ef;
+}
 .header__left {
   display: flex;
   padding-top: 5px;
@@ -263,17 +274,15 @@ body {
 #side-footer {
   position: relative;
   width: 250px;
-
-  top: -2px;
-  left: 90rem;
 }
 .right__side__footer {
   margin-left: 35px;
 }
 #right-sidebar .h5 {
   font-weight: bold;
-  font-size: 0.9rem;
+  padding: 0.2em 0 0 0.4em;
   color: #434343;
+  margin-bottom: 0;
 }
 
 #right-sidebar h6 {
@@ -286,9 +295,9 @@ body {
   color: #868686;
 }
 
-#right-sidebar .follow{
-    margin: 7px;
-    font-family: 'Courier New', Courier, monospace;
+#right-sidebar .follow {
+  margin: 7px;
+  padding-block: 0;
 }
 
 #right-sidebar button {
@@ -299,13 +308,13 @@ body {
   font-weight: bold;
   letter-spacing: 0.08rem;
   font-size: 0.9rem;
-   height: 38px;
- /* width: 150px; */
- text-align: center;
+  height: 38px;
+  width: 100%;
+  text-align: center;
 }
 
 #right-sidebar button:hover {
-  background-color: var(--bg-color);
+  background-color: #dbdbdb;
   border: 2px solid #434343;
 }
 
@@ -326,8 +335,6 @@ body {
 }
 
 #right-sidebar #follow img {
-  width: 70px;
-  height: 70px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -346,3 +353,138 @@ body {
 
 #side-footer #linkedin-logo {
   height: 14px;
+}
+.lilogo {
+  width: 40px;
+}
+#righttopcover {
+  width: 100%;
+  position: relative;
+  border-radius: 10px 10px 0 0;
+}
+#righttopava {
+  width: 70px;
+  border-radius: 50%;
+  position: absolute;
+  top: 4em;
+  right: 40%;
+  border: 3px solid #eef3f8;
+}
+#righttopname {
+  border-bottom: 2px solid #5f6163;
+  padding: 0;
+  text-align: center;
+}
+#righttop {
+  background-color: white;
+  font-size: 0.8em;
+}
+.righttopstats div {
+  display: flex;
+  justify-content: space-between;
+}
+.righttopstats {
+  padding-inline: 1em;
+  padding-top: 1em;
+  border-bottom: 2px solid #5f6163;
+}
+.righttoptabs {
+  display: flex;
+  padding-inline: 1em;
+  color: #434343;
+  padding-top: 1em;
+}
+.righttoptabs p {
+  padding-left: 0.5em;
+}
+#righttoplinks {
+  font-size: 0.8em;
+  background-color: white;
+  margin-top: 1em;
+  padding: 1em;
+  color: #0a66c2;
+  border-radius: 0 0 10px 10px;
+}
+#righttoplinksp {
+  border-bottom: 2px solid #434343;
+}
+#righttoplinksp p {
+  margin-bottom: 0.7em;
+  font-weight: 600;
+}
+#righttoplinks p:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+#righttopsearch {
+  color: #434343;
+  padding-block: 1em;
+
+  text-align: center;
+  border-radius: 0 0 10px 10px;
+  transition: 0.2s;
+}
+#righttopsearch:hover {
+  cursor: pointer;
+  background-color: #dbdbdb;
+  transition: 0.2s;
+}
+#righttopsearch p {
+  font-size: 1.3em;
+  margin: 0;
+}
+.otherUsersDesc2 p {
+  padding: 0;
+  margin: 0;
+  font-size: 0.9em !important;
+  padding-left: 0.6em;
+}
+.othersOnMain {
+  display: flex;
+}
+.usersandbutton {
+  display: flex;
+  flex-direction: column;
+}
+#middlebuttons {
+  display: flex;
+  justify-content: space-between;
+}
+#middleinput {
+  width: 89%;
+  border-radius: 20px;
+  height: 3em;
+  padding-left: 1em;
+  border: 1px solid #928f8b;
+}
+#middleAvatar {
+  width: 50px;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+#middlesearch {
+  display: flex;
+  justify-content: space-between;
+}
+#middletoppart {
+  background-color: white;
+  padding: 1em;
+  border-radius: 10px;
+}
+#button1 {
+  color: #5ba1e9;
+}
+#button2 {
+  color: #5f9b41;
+}
+#button3 {
+  color: #c88b31;
+}
+#button4 {
+  color: #e16745;
+}
+.bi-plus-lg {
+  color: #434343;
+  font-weight: 700;
+  margin-right: 0.2em;
+}

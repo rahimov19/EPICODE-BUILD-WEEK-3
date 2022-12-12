@@ -1,11 +1,19 @@
 import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { guestUserAction } from "../Redux/Actions";
+import FooterPart from "./FooterPart";
 
 export default function AnotherUser() {
   const guest = useSelector((state) => state.user.guest);
   const users = useSelector((state) => state.user.users);
-
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  function guestPage(profile) {
+    dispatch(guestUserAction(profile, profile._id));
+    navigate("/guest/" + profile._id);
+  }
   return (
     <>
       <Container id="main">
@@ -74,7 +82,10 @@ export default function AnotherUser() {
                     <div className="otherUsers">
                       {users.slice(0, 5).map((profile) => (
                         <>
-                          <div className="otherUserData">
+                          <div
+                            className="otherUserData"
+                            onClick={() => guestPage(profile, profile._id)}
+                          >
                             <div className="otherUsersPic">
                               <img src={profile.image} alt="others" />
                             </div>
@@ -97,6 +108,7 @@ export default function AnotherUser() {
           </Col>
         </Row>
       </Container>
+      <FooterPart />
     </>
   );
 }
