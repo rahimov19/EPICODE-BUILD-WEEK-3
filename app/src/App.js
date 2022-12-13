@@ -1,20 +1,25 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Notifications from "./Components/Notification/Notifications";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import Profile from "./Components/Profile";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AnotherUser from "./Components/AnotherUser";
+import NavBar from "./Components/NavBar";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import MainPage from "./Components/MainPage";
 function App() {
-  return <>
-  <BrowserRouter>
-  <Routes>
-    <Route path='/' element={
+  return (
+    <BrowserRouter>
+      <NavBar />
+      <Routes>
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/" element={<MainPage />} />
+        <Route path="/guest/:id" element={<AnotherUser />} />
+      </Routes>
+    </BrowserRouter>
+  );
 
-<Notifications/>
-    }/>
-
-  </Routes>
-  </BrowserRouter>
-  </>;
 }
-
 export default App;
