@@ -1,22 +1,25 @@
 import React from "react";
 import { Button, Modal, Form } from "react-bootstrap";
 import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchUserAction } from "../Redux/Actions";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchExperienceAction } from "../Redux/Actions";
 
-export default function EditUser() {
-  const [show, setShow] = useState(false);
+export default function EditExperience(props) {
   const user = useSelector((state) => state.user.user);
   const dispatch = useDispatch();
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const submitChanges = async () => {
     const userInformation = {
-      _id: user._id,
-      name: document.querySelector("#name").value,
-      surname: document.querySelector("#surname").value,
-      title: document.querySelector("#title").value,
+      _id: props.xp._id,
+      role: document.querySelector("#role").value,
+      company: document.querySelector("#company").value,
+      startDate: document.querySelector("#startDate").value,
+      endDate: document.querySelector("#endDate").value,
+      description: document.querySelector("#description").value,
       area: document.querySelector("#area").value,
-      bio: document.querySelector("#bio").value,
     };
     console.log(userInformation);
 
@@ -30,7 +33,7 @@ export default function EditUser() {
       },
     };
     try {
-      const endpoint = "https://striveschool-api.herokuapp.com/api/profile/";
+      const endpoint = `https://striveschool-api.herokuapp.com/api/profile/${user._id}/experiences/${props.xp._id}`;
       const response = await fetch(endpoint, options);
       if (response.ok) {
         alert("User information is updated successfully");
@@ -40,15 +43,13 @@ export default function EditUser() {
     } catch (error) {
       console.log(error);
     }
-    dispatch(fetchUserAction());
+    dispatch(fetchExperienceAction(user._id));
     handleClose();
   };
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
   return (
     <>
-      <i class="bi bi-pencil-fill editbutton" onClick={handleShow}></i>
+      <i class="bi bi-pencil-fill editOnPage" onClick={handleShow}></i>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header>
@@ -57,44 +58,58 @@ export default function EditUser() {
         <Modal.Body>
           <p id="required">* Required field</p>
           <Form>
-            <Form.Group controlId="name">
-              <Form.Label>Name*</Form.Label>
+            <Form.Group controlId="role">
+              <Form.Label>Role*</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter name"
-                defaultValue={user.name}
+                placeholder="Enter Role"
+                defaultValue={props.xp.role}
               />
             </Form.Group>
-            <Form.Group controlId="surname">
-              <Form.Label>Surname*</Form.Label>
+            <Form.Group controlId="company">
+              <Form.Label>Company*</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter surname"
-                defaultValue={user.surname}
-              />
-            </Form.Group>
-            <Form.Group controlId="title">
-              <Form.Label>Title*</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter your new position"
-                defaultValue={user.title}
+                placeholder="Enter Company Name"
+                defaultValue={props.xp.company}
               />
             </Form.Group>
             <Form.Group controlId="area">
-              <Form.Label>City*</Form.Label>
+              <Form.Label>Area*</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter your city of residence"
-                defaultValue={user.area}
+                placeholder="Enter City of Work"
+                defaultValue={props.xp.area}
               />
             </Form.Group>
-            <Form.Group controlId="bio">
-              <Form.Label>Bio*</Form.Label>
+            <Form.Group controlId="startDate">
+              <Form.Label>Start Date*</Form.Label>
+              <Form.Control
+                type="date"
+                placeholder="Enter your new position"
+                defaultValue={new Date(props.xp.startDate).toLocaleDateString(
+                  "en-CA"
+                )}
+              />
+            </Form.Group>
+            <Form.Group controlId="endDate">
+              <Form.Label>End Date</Form.Label>
+              <Form.Control
+                type="date"
+                placeholder="Enter your city of residence"
+                defaultValue={
+                  props.xp.endDate
+                    ? new Date(props.xp.endDate).toLocaleDateString("en-CA")
+                    : null
+                }
+              />
+            </Form.Group>
+            <Form.Group controlId="description">
+              <Form.Label>Description*</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter your biology"
-                defaultValue={user.bio}
+                placeholder="Enter your Job Experience"
+                defaultValue={props.xp.description}
               />
             </Form.Group>
           </Form>

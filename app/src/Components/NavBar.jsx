@@ -7,7 +7,7 @@ import TextsmsIcon from "@mui/icons-material/Textsms";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import AppsIcon from "@mui/icons-material/Apps";
 import { Divider } from "@mui/material";
-import { Link } from "react-router-dom";
+
 import HeaderProfile from "./HeaderProfile";
 import { useState, useEffect } from "react";
 import Searchbar from "./Searchbar";
@@ -50,8 +50,8 @@ function NavBar() {
         </Link>
         <div className="searchBar__div">
           <Searchbar />
+
         </div>
-      </div>
 
       <div className="header__right">
         <Link to={"/"}>
@@ -71,16 +71,35 @@ function NavBar() {
         </Link>
         <Divider className="headerOption__divider" orientation="vertical" />
 
-        <HeaderOption Icon={AppsIcon} title="Work" />
 
-        <a
-          className="headerOption__premium"
-          href="https://premium.linkedin.com/"
-        >
-          <p>Try Premium for free</p>
-        </a>
+          <HeaderOption Icon={AppsIcon} title="Work" />
+
+          <a
+            className="headerOption__premium"
+            href="https://premium.linkedin.com/"
+          >
+            <p>Try Premium for free</p>
+          </a>
+        </div>
       </div>
-    </div>
+      {location.pathname === "/profile/experience" ? (
+        <div className="header2">
+          <div className="navbarForXp">
+            <div>
+              <img src={user.image} alt="user" />
+            </div>
+            <div>
+              <p>
+                {user.name} {user.surname}
+              </p>
+              <p>{user.title}</p>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <></>
+      )}
+    </>
   );
 }
 
