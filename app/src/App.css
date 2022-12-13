@@ -1,3 +1,4 @@
+
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
 /* Header CSS */
 .header {
@@ -74,6 +75,108 @@ body {
   flex-direction: column;
   justify-content: center;
 }
+.list_group {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+  }
+  .list {
+    display: flex;
+    flex-direction: row !important;
+    border-radius: 10%;
+  }
+  .span {
+    background-color: 1px red solid;
+  }
+  
+
+  .list:hover{
+    background-color: #e4e4e4;
+  }
+  .userName{
+    color: #161616;
+  }
+  .icon_dot {
+    position: absolute;
+    left: 85%;
+    bottom: 40%;
+    font-size: 28px;
+    color: #161616;
+  }
+  
+  .hour {
+    position: absolute;
+    left: 87%;
+    bottom: 50%;
+    font-size: 15px;
+    color: #161616;
+  }
+  .sidebar-wrapper1 {
+    background-color: #fff;
+    border: solid 1px lightgray;
+    /* padding-left: 5%;
+    padding-right: 5%; */
+    border-radius: 15px;
+    /* margin-bottom: 10px; */
+    /* width: 400px; */
+  }
+ 
+  .sidebar-wrapper1 a:hover {
+    color: #838383;
+    text-decoration: none;
+  }
+  .notif_img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    margin-left: 40%;
+  }
+  .side__notification {
+    font-weight: 500;
+    line-height: 10pt;
+  }
+  
+/* Footer css */
+#right-sidebar .card-footer {
+    background: none;
+    border: none;
+  }
+  
+  #right-sidebar .card-footer > p {
+    color: #868686;
+    font-weight: bold;
+    font-size: 0.75rem;
+  }
+  
+  #right-sidebar .card-footer > p:hover {
+    cursor: pointer;
+    background-color: var(--bg-color);
+  }
+  
+  #right-sidebar #follow img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  #side-footer a {
+    color: #868686;
+    text-transform: capitalize;
+    font-size: 0.7rem;
+  }
+  
+  #side-footer p {
+    color: #434343;
+    text-transform: capitalize;
+    font-size: 0.7rem;
+  }
+  
+  #side-footer #linkedin-logo {
+    height: 14px;
+  }
 #userbuttons button {
   margin-right: 0.8em;
   font-weight: 600;
@@ -502,6 +605,7 @@ body {
   font-weight: 700;
   margin-right: 0.2em;
 }
+
 .experienceDiv {
   width: 100%;
   display: flex;
@@ -602,3 +706,4 @@ body {
   margin-top: 4em;
   margin-bottom: 2em;
 }
+
