@@ -48,8 +48,9 @@ function NavBar() {
             alt="logo"
           />
         </Link>
-
-        <Searchbar />
+        <div className="searchBar__div">
+          <Searchbar />
+        </div>
       </div>
 
       <div className="header__right">

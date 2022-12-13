@@ -87,7 +87,7 @@ function Searchbar({ user }) {
         >
           {filteredData.slice(0, 10).map((data) => {
             return (
-              <ListGroup className="search-list">
+              <ListGroup className="search__list">
                 <div>
                   <Link
                     onClick={() => {
@@ -97,6 +97,7 @@ function Searchbar({ user }) {
                     to={"/"}
                   >
                     <ListGroup.Item
+                      className="listGroup"
                       style={{
                         textAlign: "left",
                       }}
@@ -104,7 +105,16 @@ function Searchbar({ user }) {
                         onInputClick(true);
                       }}
                     >
+                      <SearchIcon className="searchBar__icon" />
+                      <span
+                        className="ml-2"
+                        style={{ color: "black", fontSize: "14px" }}
+                        onClick={goToProfile}
+                      >
+                        <strong>{data.name}</strong>
+                      </span>
                       <img
+                        className="searchBar__avatar"
                         style={{
                           width: "25px",
                           height: "25px",
@@ -113,13 +123,6 @@ function Searchbar({ user }) {
                         src={data.image}
                         alt=""
                       />
-                      <span
-                        className="ml-2"
-                        style={{ color: "black", fontSize: "14px" }}
-                        onClick={goToProfile}
-                      >
-                        <strong>{data.name}</strong>
-                      </span>
                     </ListGroup.Item>
                   </Link>
                 </div>
