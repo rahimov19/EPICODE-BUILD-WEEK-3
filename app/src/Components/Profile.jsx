@@ -1,11 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { guestUserAction } from "../Redux/Actions";
+import { guestUserAction, fetchExperienceAction } from "../Redux/Actions";
 import { useNavigate } from "react-router-dom";
 import EditUser from "./EditUser";
 import FooterPart from "./FooterPart";
+import ExperienceUser from "./ExperienceUser";
 
 export default function Profile() {
   const navigate = useNavigate();
@@ -17,7 +18,9 @@ export default function Profile() {
     dispatch(guestUserAction(profile, profile._id));
     navigate("/guest/" + profile._id);
   }
-
+  useEffect(() => {
+    dispatch(fetchExperienceAction(user._id));
+  }, []);
   return (
     <>
       <Container id="main">
@@ -62,6 +65,9 @@ export default function Profile() {
                   <h5>Main Information</h5>
                   <p>{user.bio}</p>
                 </div>
+              </Col>
+              <Col xs={12} className={"ml-5 mt-5"}>
+                <ExperienceUser />
               </Col>
             </Row>
           </Col>

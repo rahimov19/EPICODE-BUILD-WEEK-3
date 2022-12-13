@@ -7,6 +7,7 @@ import NavBar from "./Components/NavBar";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import MainPage from "./Components/MainPage";
+import EditExperiemcePage from "./Components/EditExperiemcePage";
 function App() {
   return (
     <BrowserRouter>
@@ -15,6 +16,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/" element={<MainPage />} />
         <Route path="/guest/:id" element={<AnotherUser />} />
+        <Route path="/profile/experience" element={<EditExperiemcePage />} />
       </Routes>
     </BrowserRouter>
   );
