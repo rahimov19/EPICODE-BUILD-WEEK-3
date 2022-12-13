@@ -10,9 +10,10 @@
   width: 100%;
   height: 52px;
   z-index: 999;
-  padding-left: 6vw;
+  padding-left: 7.5vw;
   padding-right: 6vw;
   background-color: white;
+
 }
 .header2 {
   position: fixed;
@@ -27,6 +28,7 @@
   padding-right: 6vw;
   background-color: white;
   border-top: 1px solid #66666673;
+
 }
 
 body {
@@ -285,13 +287,38 @@ body {
   height: 40px;
   color: #5f6163;
   background-color: #eef3f8;
+
+  margin-left: 5px;
+
   margin-left: 1em;
+
 }
 
 .header__search > input {
   outline: none;
   border: none;
   background: none;
+}
+
+.form-control {
+  outline: none !important;
+  border: none !important;
+  background: transparent !important;
+}
+.search__icon {
+  margin-top: 8px;
+}
+.listGroup {
+  display: flex;
+}
+.searchBar__icon {
+  color: #5f6163;
+}
+.searchBar__avatar {
+  -ms-flex-align: end;
+}
+.form-control:focus {
+  box-shadow: none !important;
 }
 
 /* Header Option CSS */
@@ -343,7 +370,54 @@ body {
 .headerOption:hover {
   color: black;
 }
+.menu__flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+.menu__flexRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 
+#demo-positioned-menu {
+  top: 38px;
+  left: -27vw;
+}
+.profile__button {
+  background-color: transparent !important;
+  border: 1px solid #004182 !important;
+  color: #004182 !important;
+  padding-bottom: 0 !important;
+  padding-top: 0px !important;
+  width: 220px !important;
+  border-radius: 20px !important;
+  height: 20px !important;
+  font-size: small !important;
+  margin-left: 40px;
+  margin-bottom: 10px;
+}
+.profile__name {
+  font-size: medium;
+  font-weight: 600;
+}
+.profile__position {
+  padding-left: 40px;
+}
+.menu__title {
+  font-size: medium;
+  font-weight: 600;
+}
+.menu__item {
+  font-size: small;
+  color: #5f6163;
+}
+#menu__item {
+  font-weight: 600;
+}
+.MuiMenu-list {
+  width: 300px;
+}
 /* Footer css */
 
 #footer {
