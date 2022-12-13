@@ -12,7 +12,21 @@
   z-index: 999;
   padding-left: 6vw;
   padding-right: 6vw;
-  background-color: #eef3f8;
+  background-color: white;
+}
+.header2 {
+  position: fixed;
+  top: 3em;
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 0.1px solid lightgray;
+  width: 100%;
+  height: 52px;
+  z-index: 999;
+  padding-left: 6vw;
+  padding-right: 6vw;
+  background-color: white;
+  border-top: 1px solid #66666673;
 }
 
 body {
@@ -44,7 +58,6 @@ body {
 }
 #images {
   position: relative;
-  background-color: white;
 }
 .companies img {
   width: 60px;
@@ -272,6 +285,7 @@ body {
   height: 40px;
   color: #5f6163;
   background-color: #eef3f8;
+  margin-left: 1em;
 }
 
 .header__search > input {
@@ -590,5 +604,106 @@ body {
   color: #434343;
   font-weight: 700;
   margin-right: 0.2em;
+}
+
+.experienceDiv {
+  width: 100%;
+  display: flex;
+  padding-left: 1em;
+  margin-left: 2em;
+  padding-bottom: 1em;
+}
+.experience {
+  margin-right: 5em;
+  border-bottom: 1px solid #434343;
+}
+.experienceDivImg img {
+  width: 60px;
+  border: 1px solid white;
+  margin-right: 1em;
+}
+.experienceDivInfo p {
+  margin: 0;
+  color: #666666;
+}
+.experienceDivInfo {
+  width: 85%;
+}
+.experienceDivInfo p:last-child {
+  color: black;
+  margin-top: 1em;
+}
+.experienceC4 {
+  display: flex;
+  justify-content: space-between;
+}
+.experienceC4 i {
+  cursor: pointer;
+
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  color: #434343;
+  padding: 0.3em;
+  font-size: 1.2em;
+}
+.experienceC4 div {
+  width: 5em;
+}
+.xpCol {
+  background-color: white;
+  padding: 1em;
+  margin-left: 2em;
+  border: 1px solid #43434321;
+  border-radius: 10px;
+}
+.xpTop {
+  display: flex;
+  margin-bottom: 1.5em;
+}
+.xpTop i {
+  font-size: 1.5em;
+  border-radius: 50%;
+  width: 40px;
+  text-align: center;
+}
+.xpTop i:hover {
+  background-color: #dbdbdb;
+}
+.xpRow {
+  width: 80%;
+}
+.editOnPage:hover {
+  background-color: #dbdbdb;
+  transition: 0.3s;
+}
+.editOnPage {
+  padding: 0.7em;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.navbarForXp div img {
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+.navbarForXp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 12.5vw;
+  padding-right: 6vw;
+  margin-right: auto;
+}
+.navbarForXp p {
+  margin: 0;
+  margin-left: 0.5em;
+  padding: 0;
+}
+.xpContainer {
+  margin-top: 4em;
+  margin-bottom: 2em;
 }
 
