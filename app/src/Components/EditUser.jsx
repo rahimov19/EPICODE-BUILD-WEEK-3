@@ -1,11 +1,13 @@
 import React from "react";
 import { Button, Modal, Form } from "react-bootstrap";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchUserAction } from "../Redux/Actions";
 
 export default function EditUser() {
   const [show, setShow] = useState(false);
   const user = useSelector((state) => state.user.user);
+  const dispatch = useDispatch();
 
   const submitChanges = async () => {
     const userInformation = {
@@ -38,6 +40,7 @@ export default function EditUser() {
     } catch (error) {
       console.log(error);
     }
+    dispatch(fetchUserAction());
     handleClose();
   };
 
