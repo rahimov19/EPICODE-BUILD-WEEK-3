@@ -1,5 +1,4 @@
 import React from "react";
-import SearchIcon from "@mui/icons-material/Search";
 import HeaderOption from "./HeaderOption";
 import HomeIcon from "@mui/icons-material/Home";
 import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
@@ -10,8 +9,36 @@ import AppsIcon from "@mui/icons-material/Apps";
 import { Divider } from "@mui/material";
 import { Link } from "react-router-dom";
 import HeaderProfile from "./HeaderProfile";
+import { useState, useEffect } from "react";
+import Searchbar from "./Searchbar";
 
 function NavBar() {
+  const [profileData, setProfileData] = useState({});
+
+  useEffect(() => {
+    fetchProfile();
+  }, []);
+  const fetchProfile = async () => {
+    try {
+      const url = "https://striveschool-api.herokuapp.com/api/profile/me";
+      const response = await fetch(url, {
+        headers: {
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk3MjZmOWM5NmRmYjAwMTUyMWE1Y2QiLCJpYXQiOjE2NzA4NzIxOTksImV4cCI6MTY3MjA4MTc5OX0.yvOTDhvjHOMjzOljbQSy14jHPbW8thYnr5ZABpcn5W4",
+        },
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+        setProfileData(data);
+      } else {
+        console.log("Error fetching data");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className="header">
       <div className="header__left">
@@ -22,10 +49,7 @@ function NavBar() {
           />
         </Link>
 
-        <div className="header__search">
-          <SearchIcon />
-          <input type="text" placeholder="Search" />
-        </div>
+        <Searchbar />
       </div>
 
       <div className="header__right">
@@ -39,7 +63,8 @@ function NavBar() {
         <HeaderOption Icon={NotificationsIcon} title="Notifications" />
         <Link to={"/profile"}>
           <HeaderProfile
-            avatar="https://avatars.githubusercontent.com/u/114650763?v=4"
+            avatar={profileData.image}
+            alt="profileImage"
             title="Me"
           />
         </Link>
