@@ -29,7 +29,7 @@ const MainRight = () => {
             {users[0] ? (
               <div className="otherUsers">
                 {users.slice(0, 3).map((profile) => (
-                  <div>
+                  <div key={profile._id}>
                     <div className="othersOnMain">
                       <img
                         src={profile.image}

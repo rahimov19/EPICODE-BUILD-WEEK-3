@@ -41,7 +41,10 @@ function NavBar() {
           <HeaderOption Icon={SupervisorAccountIcon} title="My Network" />
           <HeaderOption Icon={BusinessCenterIcon} title="Jobs" />
           <HeaderOption Icon={TextsmsIcon} title="Messaging" />
-          <HeaderOption Icon={NotificationsIcon} title="Notifications" />
+          <Link to={"/notifications"}>
+            {" "}
+            <HeaderOption Icon={NotificationsIcon} title="Notifications" />
+          </Link>
           <Link to={"/profile"}>
             <HeaderOption
               avatar="https://avatars.githubusercontent.com/u/114650763?v=4"

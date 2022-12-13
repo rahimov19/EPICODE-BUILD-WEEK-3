@@ -21,7 +21,7 @@ export default function ExperienceUser() {
       </div>
       {experienceList[0] ? (
         experienceList.map((xp) => (
-          <div className="experienceDiv">
+          <div className="experienceDiv" key={xp._id}>
             <div className="experienceDivImg">
               <img
                 src={"http://placekitten.com/400"}

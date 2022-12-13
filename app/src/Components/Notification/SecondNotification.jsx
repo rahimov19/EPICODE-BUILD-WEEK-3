@@ -7,7 +7,7 @@ const SecondNotification = ({ title, profiles }) => {
 
       {profiles &&
         profiles
-          .slice(0, 50)
+          .slice(0, 20)
           .reverse()
           .map(({ _id, image, name, surname, title }) => (
             <NotificationList
