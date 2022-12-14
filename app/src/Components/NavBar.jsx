@@ -7,14 +7,16 @@ import TextsmsIcon from "@mui/icons-material/Textsms";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import AppsIcon from "@mui/icons-material/Apps";
 import { Divider } from "@mui/material";
-
 import HeaderProfile from "./HeaderProfile";
 import { useState, useEffect } from "react";
 import Searchbar from "./Searchbar";
+import { useSelector } from "react-redux";
+import { Link, useLocation } from "react-router-dom";
 
 function NavBar() {
   const [profileData, setProfileData] = useState({});
-
+  const user = useSelector((state) => state.user.user);
+  const location = useLocation();
   useEffect(() => {
     fetchProfile();
   }, []);
@@ -50,27 +52,28 @@ function NavBar() {
         </Link>
         <div className="searchBar__div">
           <Searchbar />
-
         </div>
 
-      <div className="header__right">
-        <Link to={"/"}>
-          {" "}
-          <HeaderOption Icon={HomeIcon} title="Home" />
-        </Link>
-        <HeaderOption Icon={SupervisorAccountIcon} title="My Network" />
-        <HeaderOption Icon={BusinessCenterIcon} title="Jobs" />
-        <HeaderOption Icon={TextsmsIcon} title="Messaging" />
-        <HeaderOption Icon={NotificationsIcon} title="Notifications" />
-        <Link to={"/profile"}>
-          <HeaderProfile
-            avatar={profileData.image}
-            alt="profileImage"
-            title="Me"
-          />
-        </Link>
-        <Divider className="headerOption__divider" orientation="vertical" />
-
+        <div className="header__right">
+          <Link to={"/"}>
+            {" "}
+            <HeaderOption Icon={HomeIcon} title="Home" />
+          </Link>
+          <HeaderOption Icon={SupervisorAccountIcon} title="My Network" />
+          <HeaderOption Icon={BusinessCenterIcon} title="Jobs" />
+          <HeaderOption Icon={TextsmsIcon} title="Messaging" />
+          <Link to={"/notifications"}>
+            {" "}
+            <HeaderOption Icon={NotificationsIcon} title="Notifications" />
+          </Link>
+          <Link to={"/profile"}>
+            <HeaderProfile
+              avatar={profileData.image}
+              alt="profileImage"
+              title="Me"
+            />
+          </Link>
+          <Divider className="headerOption__divider" orientation="vertical" />
 
           <HeaderOption Icon={AppsIcon} title="Work" />
 
@@ -99,7 +102,7 @@ function NavBar() {
       ) : (
         <></>
       )}
-    </>
+    </div>
   );
 }
 
