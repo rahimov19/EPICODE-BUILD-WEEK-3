@@ -1,4 +1,3 @@
-
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
 /* Header CSS */
 .header {
@@ -13,7 +12,6 @@
   padding-left: 7.5vw;
   padding-right: 6vw;
   background-color: white;
-
 }
 .header2 {
   position: fixed;
@@ -28,7 +26,6 @@
   padding-right: 6vw;
   background-color: white;
   border-top: 1px solid #66666673;
-
 }
 
 body {
@@ -78,107 +75,106 @@ body {
   justify-content: center;
 }
 .list_group {
-    height: 70px;
-    width: 70px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-    object-fit: cover;
-  }
-  .list {
-    display: flex;
-    flex-direction: row !important;
-    border-radius: 10%;
-  }
-  .span {
-    background-color: 1px red solid;
-  }
-  
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+.list {
+  display: flex;
+  flex-direction: row !important;
+  border-radius: 10%;
+}
+.span {
+  background-color: 1px red solid;
+}
 
-  .list:hover{
-    background-color: #e4e4e4;
-  }
-  .userName{
-    color: #161616;
-  }
-  .icon_dot {
-    position: absolute;
-    left: 85%;
-    bottom: 40%;
-    font-size: 28px;
-    color: #161616;
-  }
-  
-  .hour {
-    position: absolute;
-    left: 87%;
-    bottom: 50%;
-    font-size: 15px;
-    color: #161616;
-  }
-  .sidebar-wrapper1 {
-    background-color: #fff;
-    border: solid 1px lightgray;
-    /* padding-left: 5%;
+.list:hover {
+  background-color: #e4e4e4;
+}
+.userName {
+  color: #161616;
+}
+.icon_dot {
+  position: absolute;
+  left: 85%;
+  bottom: 40%;
+  font-size: 28px;
+  color: #161616;
+}
+
+.hour {
+  position: absolute;
+  left: 87%;
+  bottom: 50%;
+  font-size: 15px;
+  color: #161616;
+}
+.sidebar-wrapper1 {
+  background-color: #fff;
+  border: solid 1px lightgray;
+  /* padding-left: 5%;
     padding-right: 5%; */
-    border-radius: 15px;
-    /* margin-bottom: 10px; */
-    /* width: 400px; */
-  }
- 
-  .sidebar-wrapper1 a:hover {
-    color: #838383;
-    text-decoration: none;
-  }
-  .notif_img {
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    margin-left: 40%;
-  }
-  .side__notification {
-    font-weight: 500;
-    line-height: 10pt;
-  }
-  
+  border-radius: 15px;
+  /* margin-bottom: 10px; */
+  /* width: 400px; */
+}
+
+.sidebar-wrapper1 a:hover {
+  color: #838383;
+  text-decoration: none;
+}
+.notif_img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  margin-left: 40%;
+}
+.side__notification {
+  font-weight: 500;
+  line-height: 10pt;
+}
+
 /* Footer css */
 #right-sidebar .card-footer {
-    background: none;
-    border: none;
-  }
-  
-  #right-sidebar .card-footer > p {
-    color: #868686;
-    font-weight: bold;
-    font-size: 0.75rem;
-  }
-  
-  #right-sidebar .card-footer > p:hover {
-    cursor: pointer;
-    background-color: var(--bg-color);
-  }
-  
-  #right-sidebar #follow img {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  #side-footer a {
-    color: #868686;
-    text-transform: capitalize;
-    font-size: 0.7rem;
-  }
-  
-  #side-footer p {
-    color: #434343;
-    text-transform: capitalize;
-    font-size: 0.7rem;
-  }
-  
-  #side-footer #linkedin-logo {
-    height: 14px;
-  }
+  background: none;
+  border: none;
+}
+
+#right-sidebar .card-footer > p {
+  color: #868686;
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+
+#right-sidebar .card-footer > p:hover {
+  cursor: pointer;
+  background-color: var(--bg-color);
+}
+
+#right-sidebar #follow img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#side-footer a {
+  color: #868686;
+  text-transform: capitalize;
+  font-size: 0.7rem;
+}
+
+#side-footer p {
+  color: #434343;
+  text-transform: capitalize;
+  font-size: 0.7rem;
+}
+
+#side-footer #linkedin-logo {
+  height: 14px;
+}
 #userbuttons button {
   margin-right: 0.8em;
   font-weight: 600;
@@ -291,7 +287,6 @@ body {
   margin-left: 5px;
 
   margin-left: 1em;
-
 }
 
 .header__search > input {
@@ -674,6 +669,28 @@ body {
 #button4 {
   color: #e16745;
 }
+#button11 {
+  color: #5ba1e9;
+  font-size: 1.2em;
+}
+#button22 {
+  color: #5f9b41;
+  font-size: 1.2em;
+
+  transform: translateX(-0.4em);
+}
+#button33 {
+  color: #c88b31;
+  font-size: 1.2em;
+
+  transform: translateX(-0.8em);
+}
+#button44 {
+  color: #e16745;
+  font-size: 1.2em;
+
+  transform: translateX(-1.2em);
+}
 .bi-plus-lg {
   color: #434343;
   font-weight: 700;
@@ -781,3 +798,86 @@ body {
   margin-bottom: 2em;
 }
 
+.authorimg {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid #8383834c;
+}
+
+.author p {
+  margin: 0;
+  font-size: 0.8em;
+}
+.author {
+  margin-left: 0.5em;
+}
+.author p span {
+  font-weight: 500;
+  color: #434343;
+}
+
+.author p:first-child {
+  font-weight: 800;
+}
+.posttop {
+  display: flex;
+  margin-top: 1em;
+}
+.postH5 {
+  margin: 1em;
+  margin-left: auto;
+  padding: 0.1em;
+  padding-inline: 0.5em;
+  text-align: center;
+  color: #004182;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.postH5:hover {
+  background-color: #0a66c230;
+  transition: 0.3s;
+}
+.postimg {
+  width: 100%;
+  max-height: 30em;
+  object-fit: cover;
+  overflow: hidden;
+}
+.bi-three-dots {
+  font-size: 1.4em;
+}
+.postbutton {
+  width: 24%;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+  border: none !important;
+  color: #5f6163 !important;
+}
+.buttonsdiv {
+  border-top: 1px solid #8383836f;
+  margin-top: 1em;
+}
+.postbutton:hover {
+  background-color: #5f61632d !important;
+}
+.likedPeople {
+  font-size: 0.8em;
+  margin-bottom: 0;
+  transform: translateX(-1em);
+  color: #666666;
+}
+.likedPeople2 {
+  margin-left: auto;
+  font-size: 0.8em;
+  margin-bottom: 0;
+  transform: translateX(-1em);
+  color: #666666;
+}
+.popoverBody {
+  width: 20em;
+}
+.popoverul li {
+  display: flex;
+}

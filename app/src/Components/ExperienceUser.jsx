@@ -20,11 +20,11 @@ export default function ExperienceUser() {
         </div>
       </div>
       {experienceList[0] ? (
-        experienceList.map((xp) => (
+        experienceList.map((xp, i) => (
           <div className="experienceDiv" key={xp._id}>
             <div className="experienceDivImg">
               <img
-                src={"http://placekitten.com/400"}
+                src={"http://placekitten.com/40" + i}
                 alt={"experience company img"}
               />
             </div>

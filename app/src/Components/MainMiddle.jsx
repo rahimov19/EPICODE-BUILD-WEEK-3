@@ -1,5 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import AddPost from "./AddPost";
+import NewsFeed from "./NewsFeed";
 
 export default function MainMiddle() {
   const user = useSelector((state) => state.user.user);
@@ -9,7 +11,7 @@ export default function MainMiddle() {
       <div id="middletoppart">
         <div id="middlesearch">
           <img src={user.image} alt="ava" id="middleAvatar" />
-          <input type="text" placeholder="New Post" id="middleinput" />
+          <AddPost />
         </div>
         <div id="middlebuttons" className="mt-2">
           <div>
@@ -29,6 +31,7 @@ export default function MainMiddle() {
             Write an Article
           </div>
         </div>
+        <NewsFeed />
       </div>
     </>
   );

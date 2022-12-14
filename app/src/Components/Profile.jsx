@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import EditUser from "./EditUser";
 import FooterPart from "./FooterPart";
 import ExperienceUser from "./ExperienceUser";
+import PostsUser from "./PostsUser";
 
 export default function Profile() {
   const navigate = useNavigate();
@@ -66,8 +67,9 @@ export default function Profile() {
                   <p>{user.bio}</p>
                 </div>
               </Col>
-              <Col xs={12} className={"ml-5 mt-5"}>
+              <Col xs={11} className={"ml-5 mt-5"}>
                 <ExperienceUser />
+                <PostsUser user={user} />
               </Col>
             </Row>
           </Col>
