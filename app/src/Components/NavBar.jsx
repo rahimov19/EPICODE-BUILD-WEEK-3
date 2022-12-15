@@ -40,7 +40,11 @@ function NavBar() {
           </Link>
           <HeaderOption Icon={SupervisorAccountIcon} title="My Network" />
           <HeaderOption Icon={BusinessCenterIcon} title="Jobs" />
+          
+          <Link to={"/messaging"}>
           <HeaderOption Icon={TextsmsIcon} title="Messaging" />
+          </Link>
+       
           <HeaderOption Icon={NotificationsIcon} title="Notifications" />
           <Link to={"/profile"}>
             <HeaderOption
