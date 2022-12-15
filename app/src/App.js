@@ -7,7 +7,9 @@ import AnotherUser from "./Components/AnotherUser";
 import NavBar from "./Components/NavBar";
 import MainPage from "./Components/MainPage";
 import EditExperiemcePage from "./Components/EditExperiemcePage";
+import Message from "./Components/Messages/Message";
 import Notifications from "./Components/Notification/Notifications";
+
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/guest/:id" element={<AnotherUser />} />
         <Route path="/profile/experience" element={<EditExperiemcePage />} />
+      <Route path="/messaging" element={<Message/>}/>
       </Routes>
     </BrowserRouter>
   );
