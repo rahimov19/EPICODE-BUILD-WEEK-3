@@ -8,6 +8,7 @@ import RecommendIcon from "@mui/icons-material/Recommend";
 import StarsIcon from "@mui/icons-material/Stars";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import PetsIcon from "@mui/icons-material/Pets";
+import PostPopover from "./PostPopover";
 export default function PostsUser(props) {
   const posts = useSelector((state) => state.posts.posts);
   const user = useSelector((state) => state.user.user);
@@ -20,7 +21,7 @@ export default function PostsUser(props) {
           .filter((post) => post.username === props.user.username)
           .map((post, i) => (
             <Col xs={12} className="mb-4">
-              <div className="posttop">
+              <div className="posttop lineunder">
                 <div>
                   <img
                     src={post.user.image}
@@ -40,13 +41,15 @@ export default function PostsUser(props) {
                   <p>1d</p>
                 </div>
                 <div className="postH5">
-                  <h5>+ Follow</h5>
+                  <PostPopover post={post} />
                 </div>
               </div>
               <div>
                 <p> {post.text}</p>
                 <img
-                  src={"https://placekitten.com/40" + i}
+                  src={
+                    post.image ? post.image : "https://placekitten.com/40" + i
+                  }
                   alt="postimg"
                   className="postimg"
                 />
@@ -59,9 +62,13 @@ export default function PostsUser(props) {
                   <PetsIcon id="button44" />
                 </div>
                 <p className="likedPeople">
-                  {user.name} and 1520 others Liked this Post
+                  {user.name} and {Math.floor(Math.random() * 1400)} others
+                  Liked this Post
                 </p>
-                <p className="likedPeople2">312 Comments 218 Shares</p>
+                <p className="likedPeople2">
+                  {Math.floor(Math.random() * 1400)} Comments{" "}
+                  {Math.floor(Math.random() * 1400)} Shares
+                </p>
               </div>
               <div className="buttonsdiv">
                 <Button className="postbutton mr-1">

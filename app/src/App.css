@@ -30,6 +30,7 @@
 
 body {
   background-color: #f3f2ef !important;
+  font-family: sans-serif;
 }
 #main {
   /* background-color: white; */
@@ -536,7 +537,10 @@ body {
   text-transform: capitalize;
   font-size: 0.7rem;
 }
-
+#side-footer {
+  position: sticky;
+  top: 4em;
+}
 #side-footer #linkedin-logo {
   height: 14px;
 }
@@ -550,9 +554,11 @@ body {
 }
 #righttopava {
   width: 70px;
+  height: 70px;
   border-radius: 50%;
   position: absolute;
-  top: 4em;
+  object-fit: cover;
+  top: 4.5em;
   right: 40%;
   border: 3px solid #eef3f8;
 }
@@ -590,6 +596,8 @@ body {
   padding: 1em;
   color: #0a66c2;
   border-radius: 0 0 10px 10px;
+  position: sticky;
+  top: 5em;
 }
 #righttoplinksp {
   border-bottom: 2px solid #434343;
@@ -645,6 +653,7 @@ body {
 }
 #middleAvatar {
   width: 50px;
+  object-fit: cover;
   border: 2px solid white;
   border-radius: 50%;
 }
@@ -653,7 +662,7 @@ body {
   justify-content: space-between;
 }
 #middletoppart {
-  background-color: white;
+  /* background-color: white; */
   padding: 1em;
   border-radius: 10px;
 }
@@ -826,9 +835,10 @@ body {
   margin-top: 1em;
 }
 .postH5 {
-  margin: 1em;
+  margin-block: auto;
   margin-left: auto;
   padding: 0.1em;
+  padding-top: 0.4em;
   padding-inline: 0.5em;
   text-align: center;
   color: #004182;
@@ -877,7 +887,62 @@ body {
 }
 .popoverBody {
   width: 20em;
+  padding: 0 !important;
 }
 .popoverul li {
   display: flex;
+  height: 3em;
+  font-size: 1.3em;
+  margin: 0;
+  padding: 0;
+  padding-inline: 0.5em;
+  justify-content: start;
+  align-items: center;
+}
+.popoverul {
+  padding: 0;
+}
+.popoverul li div {
+  padding-left: 0.5em;
+}
+.popoverul li:hover {
+  background-color: #928f8b3c;
+}
+.treedotsuser img {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 0.5em;
+}
+.treedotsuser {
+  display: flex;
+  align-items: center;
+}
+.treedotsuser span {
+  font-size: 0.8em;
+}
+.lineunder {
+  margin-top: 0.4em;
+  border-bottom: 1px solid #83838343;
+}
+.post {
+  background-color: white;
+  padding-inline: 1em;
+  padding-block: 0.4em;
+  border-radius: 15px;
+  border: 1px solid #6666662b;
+}
+#searchnadbuttons {
+  background-color: white;
+  border-radius: 15px;
+  border: 1px solid #6666662b;
+  padding: 1em;
+}
+.linkToGuest {
+  cursor: pointer;
+}
+.linkToGuest:hover {
+  text-decoration: underline;
+  color: #004182;
 }
