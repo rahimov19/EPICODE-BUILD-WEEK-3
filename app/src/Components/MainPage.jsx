@@ -4,7 +4,11 @@ import React, { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import MainLeft from "./MainLeft";
 import MainRight from "./MainRight";
-import { fetchAllUserAction, fetchUserAction } from "../Redux/Actions";
+import {
+  fetchAllUserAction,
+  fetchUserAction,
+  fetchAllPostsAction,
+} from "../Redux/Actions";
 
 import { useDispatch } from "react-redux";
 import MainMiddle from "./MainMiddle";
@@ -14,6 +18,7 @@ export default function MainPage() {
   useEffect(() => {
     dispatch(fetchUserAction());
     dispatch(fetchAllUserAction());
+    dispatch(fetchAllPostsAction());
   }, []);
 
   return (

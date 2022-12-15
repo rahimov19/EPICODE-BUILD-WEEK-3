@@ -29,7 +29,7 @@ const MainRight = () => {
             {users[0] ? (
               <div className="otherUsers">
                 {users.slice(0, 3).map((profile) => (
-                  <div>
+                  <div key={profile._id}>
                     <div className="othersOnMain">
                       <img
                         src={profile.image}
@@ -54,7 +54,7 @@ const MainRight = () => {
                     </div>
                     <Button
                       type="button"
-                      className="btn-connect btn-primary mb-3"
+                      className="btn-connect btn-primary mt-2 mb-4"
                     >
                       <i class="bi bi-plus-lg"></i>Follow
                     </Button>
