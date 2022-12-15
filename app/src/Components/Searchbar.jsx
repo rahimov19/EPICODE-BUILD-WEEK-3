@@ -105,9 +105,6 @@ function Searchbar({ user }) {
                   >
                     <ListGroup.Item
                       className="listGroup"
-                      style={{
-                        textAlign: "left",
-                      }}
                       onClick={() => {
                         onInputClick(true);
                       }}

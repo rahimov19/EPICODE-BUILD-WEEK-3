@@ -5,13 +5,13 @@ import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import TextsmsIcon from "@mui/icons-material/Textsms";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import AppsIcon from "@mui/icons-material/Apps";
 import { Divider } from "@mui/material";
 import HeaderProfile from "./HeaderProfile";
 import { useState, useEffect } from "react";
 import Searchbar from "./Searchbar";
 import { useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
+import HeaderWork from "./HeaderWork";
 
 function NavBar() {
   const [profileData, setProfileData] = useState({});
@@ -75,7 +75,7 @@ function NavBar() {
 
           <Divider className="headerOption__divider" orientation="vertical" />
 
-          <HeaderOption Icon={AppsIcon} title="Work" />
+          <HeaderWork title="Work" />
 
           <a
             className="headerOption__premium"

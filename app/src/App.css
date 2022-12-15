@@ -78,14 +78,28 @@ body {
   border-radius: 50%;
   margin-bottom: 10px;
   object-fit: cover;
+  display: flex !important;
 }
+.list-group-item {
+  position: relative;
+  display: inline-flex !important;
+  padding: 0.75rem 1.25rem;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  width: 18rem;
+}
+
 .list {
-  display: flex;
+  display: flex !important;
   flex-direction: row !important;
   border-radius: 10%;
 }
 .span {
   background-color: 1px red solid;
+}
+.headerWork__modal {
+  display: flex;
+  width: 20rem;
 }
 
 .list:hover {
