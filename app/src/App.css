@@ -285,7 +285,7 @@ body {
   color: #5f6163;
   background-color: #eef3f8;
   width: 15rem;
-  transition: width 1s;
+  transition: 0.5s;
 }
 .header__search:focus-within {
   width: 24rem;
@@ -308,6 +308,7 @@ body {
 }
 .listGroup {
   display: flex;
+  justify-content: space-between;
 }
 .searchBar__icon {
   color: #5f6163;

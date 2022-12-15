@@ -47,9 +47,11 @@ function HeaderProfile({ avatar, title }) {
           <h3 className="menu__title">Account</h3>
         </MenuItem>
         <MenuItem>
-          <h4 className="menu__item" id="menu__item">
-            Try Premium for free
-          </h4>
+          <a href="https://premium.linkedin.com/">
+            <h4 className="menu__item" id="menu__item">
+              Try Premium for free
+            </h4>
+          </a>
         </MenuItem>
         <MenuItem>
           <h4 className="menu__item">Settings & Privacy</h4>
