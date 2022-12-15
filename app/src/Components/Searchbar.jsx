@@ -37,7 +37,7 @@ function Searchbar({ user }) {
 
   const navigate = useNavigate();
   const goToProfile = () => {
-    navigate("/");
+    navigate(`/user/${data._id}`);
   };
 
   const fetchData = async () => {

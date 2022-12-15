@@ -3,6 +3,7 @@ import { Avatar, Menu, MenuItem, Divider } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function HeaderProfile({ avatar, title }) {
   const [open, setOpen] = useState(false);
@@ -38,7 +39,9 @@ function HeaderProfile({ avatar, title }) {
             </div>
           </div>
         </MenuItem>
-        <Button className="profile__button">View Profile</Button>
+        <Link to={"/profile"}>
+          <Button className="profile__button">View Profile</Button>
+        </Link>
         <Divider />
         <MenuItem>
           <h3 className="menu__title">Account</h3>

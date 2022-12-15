@@ -66,13 +66,13 @@ function NavBar() {
             {" "}
             <HeaderOption Icon={NotificationsIcon} title="Notifications" />
           </Link>
-          <Link to={"/profile"}>
-            <HeaderProfile
-              avatar={profileData.image}
-              alt="profileImage"
-              title="Me"
-            />
-          </Link>
+
+          <HeaderProfile
+            avatar={profileData.image}
+            alt="profileImage"
+            title="Me"
+          />
+
           <Divider className="headerOption__divider" orientation="vertical" />
 
           <HeaderOption Icon={AppsIcon} title="Work" />
