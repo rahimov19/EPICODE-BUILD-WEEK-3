@@ -9,8 +9,6 @@
   width: 100%;
   height: 52px;
   z-index: 999;
-  padding-left: 7.5vw;
-  padding-right: 6vw;
   background-color: white;
 }
 .header2 {
@@ -81,6 +79,21 @@ body {
   border-radius: 50%;
   margin-bottom: 10px;
   object-fit: cover;
+
+  display: flex !important;
+}
+.list-group-item {
+  position: relative;
+  display: inline-flex !important;
+  padding: 0.75rem 1.25rem;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  width: 18rem;
+}
+
+.list {
+  display: flex !important;
+
 }
 .list {
   display: flex;
@@ -90,6 +103,13 @@ body {
 .span {
   background-color: 1px red solid;
 }
+
+.headerWork__modal {
+  display: flex;
+  width: 20rem;
+}
+
+
 
 .list:hover {
   background-color: #e4e4e4;
@@ -275,7 +295,10 @@ body {
   height: 40px;
   margin-right: 10px;
 }
-
+.header__searchDiv {
+  width: 24rem;
+  margin-left: 1em;
+}
 .header__search {
   padding: 10px;
   display: flex;
@@ -285,9 +308,18 @@ body {
   color: #5f6163;
   background-color: #eef3f8;
 
+  width: 15rem;
+  transition: 0.5s;
+}
+.header__search:focus-within {
+  width: 24rem;
+  border: 2px solid black;
+
+
   margin-left: 5px;
 
   margin-left: 1em;
+
 }
 
 .header__search > input {
@@ -306,6 +338,7 @@ body {
 }
 .listGroup {
   display: flex;
+  justify-content: space-between;
 }
 .searchBar__icon {
   color: #5f6163;
@@ -315,6 +348,16 @@ body {
 }
 .form-control:focus {
   box-shadow: none !important;
+}
+.search__list {
+  display: flex;
+  width: 20rem;
+  justify-content: space-between;
+  flex-basis: 33.3%;
+  flex-direction: row;
+}
+.searchBar__icon .ml-2 .searchBar__avatar {
+  display: flex;
 }
 
 /* Header Option CSS */
@@ -807,6 +850,8 @@ body {
   margin-bottom: 2em;
 }
 
+
+
 .authorimg {
   width: 48px;
   height: 48px;
@@ -946,3 +991,4 @@ body {
   text-decoration: underline;
   color: #004182;
 }
+
