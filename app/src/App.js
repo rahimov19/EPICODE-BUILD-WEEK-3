@@ -1,5 +1,6 @@
-import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+
 import Profile from "./Components/Profile";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AnotherUser from "./Components/AnotherUser";

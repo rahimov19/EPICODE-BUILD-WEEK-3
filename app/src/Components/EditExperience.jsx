@@ -3,15 +3,63 @@ import { Button, Modal, Form } from "react-bootstrap";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchExperienceAction } from "../Redux/Actions";
+import { useForm } from "react-hook-form";
 
 export default function EditExperience(props) {
+  const { register, handleSubmit } = useForm();
   const user = useSelector((state) => state.user.user);
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [image, setImage] = useState(null);
+
+  const deleteFuncition = async () => {
+    const options = {
+      method: "DELETE",
+
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk2ZjAzMWM5NmRmYjAwMTUyMWE1YmIiLCJpYXQiOjE2NzA4MzYyODAsImV4cCI6MTY3MjA0NTg4MH0.-mjIeGuDeV798UyGFGMsc5ORRw1nL5qqVP2qkCqN7MY",
+      },
+    };
+    try {
+      const endpoint = `https://striveschool-api.herokuapp.com/api/profile/${user._id}/experiences/${props.xp._id}`;
+      const response = await fetch(endpoint, options);
+      if (response.ok) {
+        alert(`User information is deleted successfully`);
+      } else {
+        throw new Error("Error while uploading information");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    dispatch(fetchExperienceAction(user._id));
+    handleClose();
+  };
 
   const submitChanges = async () => {
+    const formData = new FormData();
+
+    formData.append("experience", image);
+
+    const options2 = {
+      method: "POST",
+      body: formData,
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk2ZjAzMWM5NmRmYjAwMTUyMWE1YmIiLCJpYXQiOjE2NzA4MzYyODAsImV4cCI6MTY3MjA0NTg4MH0.-mjIeGuDeV798UyGFGMsc5ORRw1nL5qqVP2qkCqN7MY",
+      },
+    };
+
+    try {
+      const endpoint = `https://striveschool-api.herokuapp.com/api/profile/${user._id}/experiences/${props.xp._id}/picture`;
+      const response = await fetch(endpoint, options2);
+    } catch (error) {
+      console.log(error);
+    }
+
     const userInformation = {
       _id: props.xp._id,
       role: document.querySelector("#role").value,
@@ -112,12 +160,26 @@ export default function EditExperience(props) {
                 defaultValue={props.xp.description}
               />
             </Form.Group>
+            <Form.Group controlId="image">
+              <Form.Label>Image*</Form.Label>
+              <Form.Control
+                type="file"
+                {...register("file")}
+                placeholder="Enter your Job Image"
+                onChange={(e) => setImage(e.target.files[0])}
+              />
+            </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
+          <Button
+            variant="danger"
+            className="mr-auto"
+            onClick={deleteFuncition}
+          >
+            Delete job information
           </Button>
+
           <Button variant="primary" type="submit" onClick={submitChanges}>
             Save Changes
           </Button>

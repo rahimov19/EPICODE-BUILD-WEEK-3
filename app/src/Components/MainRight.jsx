@@ -54,7 +54,7 @@ const MainRight = () => {
                     </div>
                     <Button
                       type="button"
-                      className="btn-connect btn-primary mb-3"
+                      className="btn-connect btn-primary mt-2 mb-4"
                     >
                       <i class="bi bi-plus-lg"></i>Follow
                     </Button>

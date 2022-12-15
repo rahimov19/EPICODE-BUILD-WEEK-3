@@ -28,6 +28,7 @@
 
 body {
   background-color: #f3f2ef !important;
+  font-family: sans-serif;
 }
 #main {
   /* background-color: white; */
@@ -78,6 +79,7 @@ body {
   border-radius: 50%;
   margin-bottom: 10px;
   object-fit: cover;
+
   display: flex !important;
 }
 .list-group-item {
@@ -91,16 +93,23 @@ body {
 
 .list {
   display: flex !important;
+
+}
+.list {
+  display: flex;
   flex-direction: row !important;
   border-radius: 10%;
 }
 .span {
   background-color: 1px red solid;
 }
+
 .headerWork__modal {
   display: flex;
   width: 20rem;
 }
+
+
 
 .list:hover {
   background-color: #e4e4e4;
@@ -298,12 +307,19 @@ body {
   height: 40px;
   color: #5f6163;
   background-color: #eef3f8;
+
   width: 15rem;
   transition: 0.5s;
 }
 .header__search:focus-within {
   width: 24rem;
   border: 2px solid black;
+
+
+  margin-left: 5px;
+
+  margin-left: 1em;
+
 }
 
 .header__search > input {
@@ -564,7 +580,10 @@ body {
   text-transform: capitalize;
   font-size: 0.7rem;
 }
-
+#side-footer {
+  position: sticky;
+  top: 4em;
+}
 #side-footer #linkedin-logo {
   height: 14px;
 }
@@ -578,9 +597,11 @@ body {
 }
 #righttopava {
   width: 70px;
+  height: 70px;
   border-radius: 50%;
   position: absolute;
-  top: 4em;
+  object-fit: cover;
+  top: 4.5em;
   right: 40%;
   border: 3px solid #eef3f8;
 }
@@ -618,6 +639,8 @@ body {
   padding: 1em;
   color: #0a66c2;
   border-radius: 0 0 10px 10px;
+  position: sticky;
+  top: 5em;
 }
 #righttoplinksp {
   border-bottom: 2px solid #434343;
@@ -673,6 +696,7 @@ body {
 }
 #middleAvatar {
   width: 50px;
+  object-fit: cover;
   border: 2px solid white;
   border-radius: 50%;
 }
@@ -681,7 +705,7 @@ body {
   justify-content: space-between;
 }
 #middletoppart {
-  background-color: white;
+  /* background-color: white; */
   padding: 1em;
   border-radius: 10px;
 }
@@ -696,6 +720,28 @@ body {
 }
 #button4 {
   color: #e16745;
+}
+#button11 {
+  color: #5ba1e9;
+  font-size: 1.2em;
+}
+#button22 {
+  color: #5f9b41;
+  font-size: 1.2em;
+
+  transform: translateX(-0.4em);
+}
+#button33 {
+  color: #c88b31;
+  font-size: 1.2em;
+
+  transform: translateX(-0.8em);
+}
+#button44 {
+  color: #e16745;
+  font-size: 1.2em;
+
+  transform: translateX(-1.2em);
 }
 .bi-plus-lg {
   color: #434343;
@@ -803,3 +849,146 @@ body {
   margin-top: 4em;
   margin-bottom: 2em;
 }
+
+
+
+.authorimg {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid #8383834c;
+}
+
+.author p {
+  margin: 0;
+  font-size: 0.8em;
+}
+.author {
+  margin-left: 0.5em;
+}
+.author p span {
+  font-weight: 500;
+  color: #434343;
+}
+
+.author p:first-child {
+  font-weight: 800;
+}
+.posttop {
+  display: flex;
+  margin-top: 1em;
+}
+.postH5 {
+  margin-block: auto;
+  margin-left: auto;
+  padding: 0.1em;
+  padding-top: 0.4em;
+  padding-inline: 0.5em;
+  text-align: center;
+  color: #004182;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.postH5:hover {
+  background-color: #0a66c230;
+  transition: 0.3s;
+}
+.postimg {
+  width: 100%;
+  max-height: 30em;
+  object-fit: cover;
+  overflow: hidden;
+}
+.bi-three-dots {
+  font-size: 1.4em;
+}
+.postbutton {
+  width: 24%;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+  border: none !important;
+  color: #5f6163 !important;
+}
+.buttonsdiv {
+  border-top: 1px solid #8383836f;
+  margin-top: 1em;
+}
+.postbutton:hover {
+  background-color: #5f61632d !important;
+}
+.likedPeople {
+  font-size: 0.8em;
+  margin-bottom: 0;
+  transform: translateX(-1em);
+  color: #666666;
+}
+.likedPeople2 {
+  margin-left: auto;
+  font-size: 0.8em;
+  margin-bottom: 0;
+  transform: translateX(-1em);
+  color: #666666;
+}
+.popoverBody {
+  width: 20em;
+  padding: 0 !important;
+}
+.popoverul li {
+  display: flex;
+  height: 3em;
+  font-size: 1.3em;
+  margin: 0;
+  padding: 0;
+  padding-inline: 0.5em;
+  justify-content: start;
+  align-items: center;
+}
+.popoverul {
+  padding: 0;
+}
+.popoverul li div {
+  padding-left: 0.5em;
+}
+.popoverul li:hover {
+  background-color: #928f8b3c;
+}
+.treedotsuser img {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 0.5em;
+}
+.treedotsuser {
+  display: flex;
+  align-items: center;
+}
+.treedotsuser span {
+  font-size: 0.8em;
+}
+.lineunder {
+  margin-top: 0.4em;
+  border-bottom: 1px solid #83838343;
+}
+.post {
+  background-color: white;
+  padding-inline: 1em;
+  padding-block: 0.4em;
+  border-radius: 15px;
+  border: 1px solid #6666662b;
+}
+#searchnadbuttons {
+  background-color: white;
+  border-radius: 15px;
+  border: 1px solid #6666662b;
+  padding: 1em;
+}
+.linkToGuest {
+  cursor: pointer;
+}
+.linkToGuest:hover {
+  text-decoration: underline;
+  color: #004182;
+}
+
