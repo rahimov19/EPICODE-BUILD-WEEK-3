@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { guestUserAction } from "../Redux/Actions";
 import FooterPart from "./FooterPart";
+import PostsUser from "./PostsUser";
 
 export default function AnotherUser() {
   const guest = useSelector((state) => state.user.guest);
@@ -50,11 +51,12 @@ export default function AnotherUser() {
                   <p>SOME small COMPANY</p>
                 </div>
               </Col>
-              <Col xs={12} className={"ml-5 mt-5"}>
+              <Col xs={11} className={"ml-5 mt-5"}>
                 <div>
                   <h5>Main Information</h5>
                   <p>{guest.bio}</p>
                 </div>
+                <PostsUser user={guest} />
               </Col>
             </Row>
           </Col>
