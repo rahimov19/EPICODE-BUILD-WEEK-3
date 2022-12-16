@@ -8,10 +8,12 @@
   display: flex;
   justify-content: space-evenly;
   border-bottom: 0.1px solid lightgray;
-  width: 100%;
+  width: 100vw;
   height: 52px;
   z-index: 999;
   background-color: white;
+  padding-left: 6vw;
+  padding-right: 6vw;
 }
 .header2 {
   position: fixed;
@@ -19,7 +21,7 @@
   display: flex;
   justify-content: space-evenly;
   border-bottom: 0.1px solid lightgray;
-  width: 100%;
+  width: 100vw;
   height: 52px;
   z-index: 999;
   padding-left: 6vw;
@@ -391,8 +393,8 @@ body {
 
 .headerOption__avatar {
   object-fit: contain;
-  height: 23px !important;
-  width: 23px !important;
+  height: 21px !important;
+  width: 21px !important;
 }
 
 .h3,
@@ -489,6 +491,9 @@ h3 {
   padding: 0;
   height: 30px;
   background-color: transparent;
+}
+#root > div.header > div > div.header__right > div:nth-child(8) > div {
+  margin-top: -0.15em;
 }
 
 #modal-modal-title {

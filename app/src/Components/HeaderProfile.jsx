@@ -33,9 +33,13 @@ function HeaderProfile({ avatar, title }) {
         <MenuItem>
           <div className="menu__flexColumn">
             <div className="menu__flexRow">
-              {avatar && <Avatar className="profile__avatar" src={avatar} />}
-              <h6 className="profile__name">Changing name here</h6>
-              <p className="profile__position">changing position here</p>
+              {avatar && (
+                <Avatar className="profile__avatar" src={user.image} />
+              )}
+              <h6 className="profile__name">
+                {user.name} {user.surname}
+              </h6>
+              <p className="profile__position">{user.title}</p>
             </div>
           </div>
         </MenuItem>
