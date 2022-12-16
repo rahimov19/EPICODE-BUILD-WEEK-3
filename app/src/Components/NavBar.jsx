@@ -59,7 +59,10 @@ function NavBar() {
             {" "}
             <HeaderOption Icon={HomeIcon} title="Home" />
           </Link>
-          <HeaderOption Icon={SupervisorAccountIcon} title="My Network" />
+          <Link to={"/network"}>
+            {" "}
+            <HeaderOption Icon={SupervisorAccountIcon} title="My Network" />
+          </Link>
           <HeaderOption Icon={BusinessCenterIcon} title="Jobs" />
 
           <Link to={"/messaging"}>

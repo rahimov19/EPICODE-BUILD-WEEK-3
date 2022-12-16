@@ -9,7 +9,7 @@ import MainPage from "./Components/MainPage";
 import EditExperiemcePage from "./Components/EditExperiemcePage";
 import Message from "./Components/Messages/Message";
 import Notifications from "./Components/Notification/Notifications";
-
+import Network from "./Components/Network";
 
 function App() {
   return (
@@ -22,7 +22,8 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/guest/:id" element={<AnotherUser />} />
         <Route path="/profile/experience" element={<EditExperiemcePage />} />
-      <Route path="/messaging" element={<Message/>}/>
+        <Route path="/messaging" element={<Message />} />
+        <Route path="/network" element={<Network />} />
       </Routes>
     </BrowserRouter>
   );

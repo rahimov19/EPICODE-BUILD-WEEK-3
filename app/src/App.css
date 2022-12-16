@@ -1040,6 +1040,12 @@ h3 {
   margin: 0;
   font-size: 0.8em;
 }
+.author p:hover {
+  text-decoration: underline;
+  color: #004182;
+  cursor: pointer;
+}
+
 .author {
   margin-left: 0.5em;
 }
@@ -1295,4 +1301,113 @@ h3 {
 }
 .card-text {
   font-weight: bold;
+}
+.networkrow {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+  padding-inline: 0.5em;
+  padding-block: 0.2em;
+  height: 2.2em;
+
+  color: #928f8b;
+}
+.networkrow:hover {
+  background-color: #83838325;
+  cursor: pointer;
+}
+.networkrow i {
+  padding-right: 0.5em;
+}
+.networkrow p:last-child {
+  margin-left: auto;
+}
+.networkrow p {
+  margin: 0;
+  font-size: 0.8em;
+}
+.addcontactsnetwork {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.addcontactsnetwork p {
+  font-size: 0.6em;
+}
+.addcontactsnetwork button {
+  border-radius: 20px;
+  width: 60%;
+  background-color: transparent;
+  color: #004182;
+  border: 2px solid #00418267;
+}
+.addcontactsnetwork button:hover {
+  color: #004182;
+  background-color: #0052a324;
+  border: 2px solid #004182;
+}
+.addcontactsnetwork span {
+  color: #004182;
+  padding-left: 0.7em;
+  cursor: pointer;
+}
+.addcontactsnetwork span:hover {
+  text-decoration: underline;
+}
+.addcontactsnetwork input {
+  width: 100%;
+  margin-bottom: 1em;
+}
+.configurespan {
+  color: #838383;
+  padding: 0.45em;
+  cursor: pointer;
+}
+.configurespan:hover {
+  background-color: #83838346;
+  border-radius: 15px;
+}
+.carduserimg {
+  width: 100%;
+  height: 62px;
+  object-fit: cover;
+  position: relative;
+}
+.carduserava {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 2em;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.508);
+}
+.cardtitleuser {
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.cardtextuser {
+  margin: 0;
+  padding-block: 0.4em;
+  font-size: 0.9em;
+  color: #666666;
+}
+.cardfollowers {
+  margin-top: 1.5em;
+  margin-bottom: 0;
+}
+.cardbuttonuser {
+  width: 100%;
+  padding: 0;
+  border: #838383;
+  background-color: transparent;
+  color: #004182;
+}
+.cardbuttonuser:hover {
+  color: #004182;
+
+  background-color: #005ab523;
 }
