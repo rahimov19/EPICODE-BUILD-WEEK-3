@@ -379,6 +379,10 @@ body {
   font-size: 12px;
   font-weight: 400;
 }
+.headerOption__title > svg {
+  padding-bottom: 3px;
+  width: 20px;
+}
 
 .headerOption__icon {
   object-fit: contain;
@@ -387,12 +391,18 @@ body {
 
 .headerOption__avatar {
   object-fit: contain;
-  height: 25px !important;
-  width: 25px !important;
+  height: 23px !important;
+  width: 23px !important;
 }
 
+.h3,
+h3 {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  /* line-height: 1.2; */
+}
 .headerOption__divider {
-  margin-top: -5px !important;
+  margin-top: -10px !important;
   height: 52px !important;
 }
 
@@ -981,7 +991,6 @@ body {
   padding-left: 2.375rem;
 }
 
-
 .has-search .form-control-feedback {
   position: absolute;
   z-index: 2;
@@ -1258,4 +1267,3 @@ body {
 .fileuploadlabel:hover {
   background-color: #8383833e;
 }
-
