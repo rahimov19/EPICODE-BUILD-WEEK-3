@@ -423,16 +423,23 @@ h3 {
 .headerOption:hover {
   color: black;
 }
+#idOfMenuItem {
+  width: 2em;
+  background-color: transparent;
+}
 .menu__flexColumn {
   display: flex;
-  flex-direction: column;
+  /* width: 100%; */
 }
+
 .menu__flexRow {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
 }
-
+#linktoprofile {
+  text-decoration: none;
+  color: #161616;
+}
 #demo-positioned-menu {
   top: 38px;
   left: -27vw;
@@ -453,9 +460,11 @@ h3 {
 .profile__name {
   font-size: medium;
   font-weight: 600;
+  padding-left: 1em;
+  margin-bottom: 0.1em;
 }
 .profile__position {
-  padding-left: 40px;
+  padding-left: 1em;
 }
 .menu__title {
   font-size: medium;
