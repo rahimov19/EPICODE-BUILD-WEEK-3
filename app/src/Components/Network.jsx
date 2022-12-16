@@ -1,8 +1,17 @@
 import React from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { guestUserAction } from "../Redux/Actions";
 
 export default function Network() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const gotoProfile = (user1) => {
+    dispatch(guestUserAction(user1));
+    navigate(`/guest/${user1._id}`);
+  };
+  const user = useSelector((state) => state.user.user);
   const users = useSelector((state) => state.user.users);
   return (
     <Container>
@@ -46,7 +55,8 @@ export default function Network() {
               others connect. You choose who to connect to and who to invite.
               <span>Learn more...</span>{" "}
             </p>{" "}
-            <input type="text" placeholder="email" /> <Button>Continues</Button>
+            <input type="text" placeholder={user.email} className={"px-2"} />{" "}
+            <Button>Continues</Button>
           </div>
         </Col>
         <Col xs={8}>
@@ -70,7 +80,10 @@ export default function Network() {
                         src={"https://placekitten.com/40" + i}
                       />
                       <Card.Body>
-                        <Card.Title className="pt-3 cardtitleuser">
+                        <Card.Title
+                          className="pt-3 cardtitleuser"
+                          onClick={() => gotoProfile(user1)}
+                        >
                           <img
                             src={
                               user1.image

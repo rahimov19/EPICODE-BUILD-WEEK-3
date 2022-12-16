@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
@@ -12,6 +13,9 @@ export default function AnotherUser() {
   const [guestxp, setguestxp] = useState();
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [guest]);
   useEffect(() => {
     fetchXp();
   }, [guest]);
@@ -122,7 +126,7 @@ export default function AnotherUser() {
                 <Col xs={2} className={"iconquestionmark"}>
                   <i className="bi bi-question-circle-fill"></i>
                 </Col>
-                <Col xs={12} className={"othersCol"}>
+                <Col xs={12} className={"othersCol px-3"}>
                   <h3 className="my-3">Check others</h3>
                   {users[0].name ? (
                     <div className="otherUsers">

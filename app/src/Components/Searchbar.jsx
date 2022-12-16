@@ -1,9 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
 import { useState } from "react";
 import { Form, InputGroup, ListGroup } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { guestUserAction } from "../Redux/Actions";
 
 function Searchbar({ user }) {
@@ -37,8 +38,6 @@ function Searchbar({ user }) {
     console.log(clicked);
     setClicked(wasItClicked);
   };
-
-  const guest = useSelector((state) => state.user.guest);
 
   const navigate = useNavigate();
 
@@ -81,7 +80,7 @@ function Searchbar({ user }) {
           }}
         >
           <SearchIcon className="search__icon" />
-          <Form.Control placeholder="Search" />
+          <Form.Control placeholder="Search" id="searchbarinput" />
         </InputGroup>
       </div>
 
@@ -89,6 +88,7 @@ function Searchbar({ user }) {
         <div
           style={{
             position: "fixed",
+            top: "3.2em",
             zIndex: "3",
           }} /* style={{marginTop: '33rem'}} */
         >

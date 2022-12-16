@@ -44,7 +44,7 @@ export const fetchAllPostsAction = (posts) => {
       );
       if (response.ok) {
         let data = await response.json();
-        dispatch(getPostsAction(data));
+        dispatch(getPostsAction(data.reverse()));
       } else {
         console.log("error");
       }

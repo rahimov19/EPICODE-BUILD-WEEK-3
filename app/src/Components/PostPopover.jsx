@@ -1,4 +1,5 @@
-import React, { useState, useRef } from "react";
+/* eslint-disable no-unused-vars */
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Button, Modal, Form } from "react-bootstrap";
 import { fetchAllPostsAction } from "../Redux/Actions";
@@ -7,7 +8,7 @@ import Popover from "react-bootstrap/Popover";
 import { useForm } from "react-hook-form";
 
 export default function PostPopover(props) {
-  const { register, handleSubmit } = useForm();
+  const { register } = useForm();
   const [image, setImage] = useState(null);
 
   const [show3, setShow3] = useState(false);
@@ -134,7 +135,6 @@ export default function PostPopover(props) {
 
     try {
       const endpoint = `https://striveschool-api.herokuapp.com/api/posts/${props.post._id}`;
-      const response = await fetch(endpoint, options2);
     } catch (error) {
       console.log(error);
     }
@@ -196,6 +196,7 @@ export default function PostPopover(props) {
               <Form.Label></Form.Label>
               <Form.Control
                 type="text"
+                className="editpostinput"
                 placeholder="What do you want to share?"
                 defaultValue={props.post.text}
               />
@@ -230,7 +231,7 @@ export default function PostPopover(props) {
         <Modal.Header closeButton>
           <Modal.Title>Delete Post</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="py-4">
           Are you sure you want to delete this post like forever?
         </Modal.Body>
         <Modal.Footer>
@@ -244,6 +245,7 @@ export default function PostPopover(props) {
       </Modal>
 
       <OverlayTrigger
+        // eslint-disable-next-line no-const-assign
         ref={(r) => (ref = r)}
         container={ref.current}
         trigger="click"

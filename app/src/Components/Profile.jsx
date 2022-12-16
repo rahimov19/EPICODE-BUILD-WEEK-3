@@ -22,6 +22,9 @@ export default function Profile() {
     navigate("/guest/" + profile._id);
   }
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  useEffect(() => {
     dispatch(fetchExperienceAction(user._id));
   }, []);
 
@@ -107,9 +110,9 @@ export default function Profile() {
                 </Col>
               </div>
               <Col xs={12} className={"p-0 mt-2"}>
-                <div className="bgWhite p-4 w-100">
-                  <h5>Main Information</h5>
-                  <p>{user.bio}</p>
+                <div className="bgWhite px-4 py-3 w-100">
+                  <h5 className="pl-3">Main Information</h5>
+                  <p className="pl-3 mb-2">{user.bio}</p>
                 </div>
               </Col>
               <Col xs={12} className={"mt-3"}>
@@ -136,7 +139,7 @@ export default function Profile() {
                 <Col xs={2} className={"iconquestionmark"}>
                   <i className="bi bi-question-circle-fill"></i>
                 </Col>
-                <Col xs={12} className={"othersCol"}>
+                <Col xs={12} className={"othersCol px-3"}>
                   <h3 className="mb-3">Check others</h3>
                   {users[0] ? (
                     <div className="otherUsers">

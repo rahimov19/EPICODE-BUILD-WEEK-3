@@ -13,13 +13,13 @@ import { useNavigate } from "react-router-dom";
 import { guestUserAction } from "../Redux/Actions";
 
 export default function NewsFeed() {
-  function getMultipleRandom(arr, num) {
-    const shuffled = [...arr].sort(
-      () => 1000 - Math.floor(Math.random() * 2000)
-    );
+  // function getMultipleRandom(arr, num) {
+  //   const shuffled = [...arr].sort(
+  //     () => 1000 - Math.floor(Math.random() * 2000)
+  //   );
 
-    return shuffled.slice(0, num);
-  }
+  //   return shuffled.slice(0, num);
+  // }
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -120,7 +120,7 @@ export default function NewsFeed() {
       )}
 
       {posts[0] ? (
-        getMultipleRandom(posts, 20).map((post, i) => (
+        posts.slice(0, 20).map((post, i) => (
           <div className="my-3 post" key={post._id}>
             <div className="mt-3 d-flex justify-content-between lineunder pb-1">
               <div className="treedotsuser ">
@@ -151,8 +151,8 @@ export default function NewsFeed() {
                   <p
                     className="linkToGuest"
                     onClick={() => {
-                      navigate(`/guest/${post.user._id}`);
                       dispatch(guestUserAction(post.user));
+                      navigate(`/guest/${post.user._id}`);
                     }}
                   >
                     {post.user.name} {post.user.surname}{" "}

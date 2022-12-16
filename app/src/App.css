@@ -320,22 +320,11 @@ body {
 .header__search:focus-within {
   width: 24rem;
   border: 2px solid black;
-
-  margin-left: 5px;
-
-  margin-left: 1em;
 }
-
-.header__search > input {
-  outline: none;
+#searchbarinput {
+  background: transparent;
   border: none;
-  background: none;
-}
-
-.form-control {
-  outline: none !important;
-  border: none !important;
-  background: transparent !important;
+  outline: none;
 }
 .search__icon {
   margin-top: 8px;
@@ -1286,6 +1275,7 @@ h3 {
   margin-right: auto;
   display: flex;
   padding-inline: 1em;
+  margin-top: -1em;
   border-radius: 15px;
   /* align-items: center; */
 }
@@ -1298,6 +1288,12 @@ h3 {
 }
 .fileuploadlabel:hover {
   background-color: #8383833e;
+}
+.editpostinput {
+  border: none;
+}
+.editpostinput:hover {
+  border: none;
 }
 .card-text {
   font-weight: bold;
@@ -1387,6 +1383,7 @@ h3 {
   font-size: 1em;
   font-weight: 600;
   margin-bottom: 0;
+  cursor: pointer;
 }
 
 .cardtextuser {
