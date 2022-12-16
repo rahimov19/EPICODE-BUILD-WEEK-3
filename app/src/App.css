@@ -966,11 +966,15 @@ h3 {
   width: 300px;
 }
 .hour {
+  visibility: hidden;
   position: absolute;
   left: 87%;
   bottom: 8%;
   font-size: 20px;
   color: rgb(0, 0, 0);
+}
+.mt-3 {
+  margin-top: 0.8em !important;
 }
 .RemoveBorder {
   border: none;
@@ -1288,4 +1292,7 @@ h3 {
 }
 .fileuploadlabel:hover {
   background-color: #8383833e;
+}
+.card-text {
+  font-weight: bold;
 }
