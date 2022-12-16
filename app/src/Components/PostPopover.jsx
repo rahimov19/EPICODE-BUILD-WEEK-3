@@ -183,21 +183,16 @@ export default function PostPopover(props) {
               <div className="author">
                 <p>
                   {user.name} {user.surname}{" "}
-                  <span>
-                    <i className="bi bi-dot"></i> 1-st
-                  </span>
                 </p>
-
-                <p>{user.title}</p>
-                <p>1d</p>
-              </div>
-              <div className="postH5">
-                <h5>+ Follow</h5>
+                <Button id="postbutton">
+                  <i class="bi bi-globe-asia-australia"></i>
+                  <p> Worldwide</p> <i class="bi bi-caret-down-fill"></i>
+                </Button>
               </div>
             </div>
           </div>
           <Form>
-            <Form.Group controlId="posttext">
+            <Form.Group controlId="posttext" className="mb-5">
               <Form.Label></Form.Label>
               <Form.Control
                 type="text"
@@ -205,21 +200,26 @@ export default function PostPopover(props) {
                 defaultValue={props.post.text}
               />
             </Form.Group>
-            <Form.Group controlId="image">
-              <Form.Label>Add an image to your post</Form.Label>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer id="editpostfooter">
+          <Form.Group controlId="image" className="editpostimage">
+            <label for="fileupload" class="fileuploadlabel">
+              <i class="bi bi-image"></i>
+              <p> Add image to your post</p>
               <Form.Control
+                id="fileupload"
                 type="file"
                 {...register("file")}
                 placeholder="Enter your Job Image"
-                onChange={(e) => setImage(e.target.files[0])}
+                onChange={(e) => {
+                  setImage(e.target.files[0]);
+                  document.querySelector("#done").classList.remove("d-none");
+                }}
               />
-            </Form.Group>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
+              <i id="done" class="bi bi-check d-none"></i>
+            </label>{" "}
+          </Form.Group>
           <Button variant="primary" type="submit" onClick={submitChanges}>
             Save Changes
           </Button>

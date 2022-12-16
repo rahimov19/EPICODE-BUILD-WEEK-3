@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Button, Modal, Form } from "react-bootstrap";
+import { Button, Modal, Form, Col } from "react-bootstrap";
 import { fetchAllPostsAction } from "../Redux/Actions";
 
 export default function AddPost() {
@@ -51,8 +51,8 @@ export default function AddPost() {
         onClick={handleShow}
       />
 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header>
+      <Modal id="modalAddPost" show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
           <Modal.Title>Create a Post</Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -64,21 +64,17 @@ export default function AddPost() {
               <div className="author">
                 <p>
                   {user.name} {user.surname}{" "}
-                  <span>
-                    <i className="bi bi-dot"></i> 1-st
-                  </span>
                 </p>
 
-                <p>{user.title}</p>
-                <p>1d</p>
-              </div>
-              <div className="postH5">
-                <h5>+ Follow</h5>
+                <Button id="postbutton">
+                  <i class="bi bi-globe-asia-australia"></i>
+                  <p> Worldwide</p> <i class="bi bi-caret-down-fill"></i>
+                </Button>
               </div>
             </div>
           </div>
           <Form>
-            <Form.Group controlId="posttext">
+            <Form.Group controlId="posttext" className="mb-5">
               <Form.Label></Form.Label>
               <Form.Control
                 type="text"
@@ -87,13 +83,36 @@ export default function AddPost() {
             </Form.Group>
           </Form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" type="submit" onClick={submitChanges}>
-            Save Changes
-          </Button>
+        <Modal.Footer className="d-flex justify-content-between footercreatepost mt-5">
+          <Col
+            xs={3}
+            className="d-flex justify-content-between footerposticons"
+          >
+            <i class="bi bi-image"></i>
+            <i class="bi bi-play-btn-fill"></i>
+            <i class="bi bi-file-earmark-text-fill"></i>
+            <i class="bi bi-three-dots"></i>
+          </Col>
+          <Col
+            xs={4}
+            className="d-flex justify-content-center align-items-center footermamber"
+          >
+            <i class="bi bi-chat-left-text"></i> Any member
+          </Col>
+          <Col
+            xs={3}
+            className="d-flex justify-content-between align-items-center"
+          >
+            <i class="bi bi-clock"></i>{" "}
+            <Button
+              variant="primary"
+              type="submit"
+              id="submitPostButton"
+              onClick={submitChanges}
+            >
+              Publish
+            </Button>
+          </Col>
         </Modal.Footer>
       </Modal>
     </>
