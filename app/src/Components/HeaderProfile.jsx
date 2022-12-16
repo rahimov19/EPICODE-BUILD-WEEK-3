@@ -4,13 +4,15 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function HeaderProfile({ avatar, title }) {
+  const user = useSelector((state) => state.user.user);
   const [open, setOpen] = useState(false);
   return (
     <div className="headerOption">
       <div onClick={(e) => setOpen(true)}>
-        {avatar && <Avatar className="headerOption__avatar" src={avatar} />}
+        {avatar && <Avatar className="headerOption__avatar" src={user.image} />}
         <h3 className="headerOption__title">
           {title}
           <ArrowDropDownIcon />
@@ -30,14 +32,20 @@ function HeaderProfile({ avatar, title }) {
           horizontal: "right",
         }}
       >
-        <MenuItem>
-          <div className="menu__flexColumn">
+        <MenuItem id="idOfMenuItem">
+          <Link id="linktoprofile" to={"/profile"}>
             <div className="menu__flexRow">
-              {avatar && <Avatar className="profile__avatar" src={avatar} />}
-              <h6 className="profile__name">Changing name here</h6>
-              <p className="profile__position">changing position here</p>
+              {avatar && (
+                <Avatar className="profile__avatar" src={user.image} />
+              )}
+              <div id="detailsOfMenuProfile">
+                <h6 className="profile__name">
+                  {user.name} {user.surname}
+                </h6>
+                <p className="profile__position">{user.title}</p>
+              </div>
             </div>
-          </div>
+          </Link>
         </MenuItem>
         <Link to={"/profile"}>
           <Button className="profile__button">View Profile</Button>
