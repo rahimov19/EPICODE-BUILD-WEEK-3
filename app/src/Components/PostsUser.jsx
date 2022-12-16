@@ -15,12 +15,11 @@ export default function PostsUser(props) {
 
   return (
     <>
-      <h3>User's Posts</h3>
       {posts[0] ? (
         posts
           .filter((post) => post.username === props.user.username)
           .map((post, i) => (
-            <Col xs={12} className="mb-4">
+            <Col xs={12} className="my-4 postsofuser">
               <div className="posttop lineunder">
                 <div>
                   <img
@@ -45,7 +44,7 @@ export default function PostsUser(props) {
                 </div>
               </div>
               <div>
-                <p> {post.text}</p>
+                <p className="mt-3"> {post.text}</p>
                 <img
                   src={
                     post.image ? post.image : "https://placekitten.com/40" + i

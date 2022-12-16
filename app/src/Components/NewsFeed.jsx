@@ -13,6 +13,14 @@ import { useNavigate } from "react-router-dom";
 import { guestUserAction } from "../Redux/Actions";
 
 export default function NewsFeed() {
+  function getMultipleRandom(arr, num) {
+    const shuffled = [...arr].sort(
+      () => 1000 - Math.floor(Math.random() * 2000)
+    );
+
+    return shuffled.slice(0, num);
+  }
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((state) => state.user.user);
@@ -50,7 +58,7 @@ export default function NewsFeed() {
                   />
                 </div>
                 <div className="author">
-                  <p>
+                  <p onClick={() => navigate("/profile")}>
                     {post.user.name} {post.user.surname}{" "}
                     <span>
                       <i className="bi bi-dot"></i> 1-st
@@ -62,7 +70,7 @@ export default function NewsFeed() {
                 </div>
                 <div className="postH5"></div>
               </div>
-              <div>
+              <div className="mt-3">
                 <p> {post.text}</p>
                 <img
                   src={
@@ -112,7 +120,7 @@ export default function NewsFeed() {
       )}
 
       {posts[0] ? (
-        posts.slice(0, 20).map((post, i) => (
+        getMultipleRandom(posts, 20).map((post, i) => (
           <div className="my-3 post" key={post._id}>
             <div className="mt-3 d-flex justify-content-between lineunder pb-1">
               <div className="treedotsuser ">

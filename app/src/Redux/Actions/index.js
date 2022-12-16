@@ -9,31 +9,6 @@ export const GET_POSTS = "GET_POSTS";
 export const GET_MY_POST = "GET_MY_POST";
 export const MY_POSTS = "MY_POSTS";
 
-// export const fetchMyPostsAction = (userId) => {
-//   return async (dispatch, getState) => {
-//     try {
-//       let response = await fetch(
-//         `https://striveschool-api.herokuapp.com/api/posts/`,
-//         {
-//           headers: {
-//             Authorization:
-//               "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk2ZjAzMWM5NmRmYjAwMTUyMWE1YmIiLCJpYXQiOjE2NzA4MzYyODAsImV4cCI6MTY3MjA0NTg4MH0.-mjIeGuDeV798UyGFGMsc5ORRw1nL5qqVP2qkCqN7MY",
-//           },
-//         }
-//       );
-//       if (response.ok) {
-//         let data = await response.json();
-//         dispatch(myPostsAction(data));
-//       } else {
-//         console.log("error");
-//       }
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   };
-
-// }
-
 export const myPostsAction = (posts) => {
   return {
     type: MY_POSTS,

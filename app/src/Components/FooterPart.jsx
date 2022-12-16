@@ -3,7 +3,7 @@ import React from "react";
 
 const FooterPart = () => {
   return (
-    <Container id="footer" className="">
+    <Container fluid id="footer" className="">
       <Image src="/Images/logo2.png" className="ml-3" alt="Linked Logo" />
 
       <Col xs={12} md={10}>

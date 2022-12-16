@@ -1,4 +1,6 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;800&family=Open+Sans:ital,wght@0,600;0,800;1,400&display=swap");
+
 /* Header CSS */
 .header {
   position: sticky;
@@ -38,7 +40,9 @@ body {
   border-radius: 20px 20px 0 0;
 }
 #ava {
-  width: 8em;
+  width: 152px;
+  height: 152px;
+  object-fit: cover;
   border-radius: 50%;
   position: absolute;
   bottom: -3em;
@@ -243,10 +247,13 @@ body {
 
 .othersCol {
   color: black;
-  margin-top: 2em;
+  padding: 0;
+  /* margin-top: 2em; */
 }
 .bgWhite {
   background-color: white;
+  border-radius: 15px;
+  border: 1px solid #6666663b;
 }
 #mainrow {
   margin: 0;
@@ -515,8 +522,7 @@ body {
 /* Footer css */
 
 #footer {
-  margin-left: 400px;
-  max-width: 77rem;
+  margin-left: 19%;
 }
 
 #footer img {
@@ -590,9 +596,9 @@ body {
   border-radius: 25px;
   border: 1px solid #434343;
   color: var(--gray-text);
-  font-weight: bold;
-  letter-spacing: 0.08rem;
-  font-size: 0.9rem;
+  font-weight: 600;
+
+  font-size: 1em;
   height: 38px;
   width: 100%;
   text-align: center;
@@ -837,7 +843,6 @@ body {
 }
 .experienceC4 i {
   cursor: pointer;
-
   width: 50px;
   height: 50px;
   text-align: center;
@@ -845,6 +850,9 @@ body {
   color: #434343;
   padding: 0.3em;
   font-size: 1.2em;
+}
+.experienceC4 i:hover {
+  background-color: #8383836f;
 }
 .experienceC4 div {
   width: 5em;
@@ -884,7 +892,9 @@ body {
 }
 .navbarForXp div img {
   width: 40px;
+  height: 40px;
   border-radius: 50%;
+  object-fit: cover;
   border: 1px solid white;
 }
 .navbarForXp {
@@ -971,6 +981,7 @@ body {
   padding-left: 2.375rem;
 }
 
+
 .has-search .form-control-feedback {
   position: absolute;
   z-index: 2;
@@ -1033,16 +1044,25 @@ body {
 .bi-three-dots {
   font-size: 1.4em;
 }
+.bi-three-dots:hover {
+  background-color: #8383836f;
+  border-radius: 50%;
+}
 .postbutton {
-  width: 24%;
+  width: 23%;
   border-radius: 0 !important;
   background-color: transparent !important;
   border: none !important;
   color: #5f6163 !important;
+  padding-inline: 0;
 }
 .buttonsdiv {
   border-top: 1px solid #8383836f;
   margin-top: 1em;
+  display: flex;
+  justify-content: space-between;
+  /* width: 110%; */
+  margin-inline: -2.2em;
 }
 .postbutton:hover {
   background-color: #5f61632d !important;
@@ -1121,3 +1141,121 @@ body {
   text-decoration: underline;
   color: #004182;
 }
+
+.postsofuser {
+  background-color: white;
+  padding: 1em;
+  padding-inline: 2.4em;
+  border-radius: 15px;
+  border: 1px solid #66666639;
+}
+#postbutton {
+  background-color: transparent;
+  color: #666666;
+  border-radius: 30px;
+  height: 2em;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-color: #666666;
+  margin-top: 0.2em;
+}
+#postbutton p {
+  font-size: 0.8em;
+  margin-inline: 0.4em;
+}
+.modal-content {
+  border-radius: 15px;
+  border: 1px solid #666666b9;
+}
+.btn-close::after {
+  content: "×";
+}
+.btn-close {
+  font-size: 2.4em;
+  padding: 0;
+  margin: 0;
+  height: 20px;
+  margin-top: -0.3em;
+  color: #666666;
+  background-color: transparent;
+  border: none;
+}
+
+.modal-body {
+  padding-bottom: 0;
+}
+#submitPostButton {
+  border-radius: 15px;
+  color: #666666;
+  background-color: transparent;
+  border-color: #66666669;
+}
+#submitPostButton:hover {
+  background-color: #83838337;
+}
+.footercreatepost i {
+  margin-right: 0.7em;
+  /* padding: 0.2em; */
+  font-size: 1.2em;
+}
+.footercreatepost {
+  padding: 0.5rem 2rem 0.7rem 0.2rem;
+}
+.footerposticons i {
+  border-radius: 50%;
+  padding-inline: 0.2em;
+}
+.footerposticons {
+  margin-right: 2.5em;
+  cursor: pointer;
+}
+.footerposticons i:hover {
+  background-color: #83838337;
+}
+.footermamber:hover {
+  background-color: #83838337;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.bi-clock:hover {
+  background-color: #83838337;
+}
+.bi-clock {
+  border-radius: 50%;
+  cursor: pointer;
+  padding-inline: 0.2em;
+}
+.editpostimage {
+  padding: 0;
+  margin: 0;
+  height: 20px;
+}
+#editpostfooter {
+  /* align-items: center; */
+  justify-content: space-between;
+  width: 100%;
+}
+#fileupload {
+  display: none;
+}
+.fileuploadlabel {
+  cursor: pointer;
+  margin-right: auto;
+  display: flex;
+  padding-inline: 1em;
+  border-radius: 15px;
+  /* align-items: center; */
+}
+.fileuploadlabel i {
+  font-size: 2em;
+}
+.fileuploadlabel p {
+  padding-top: 0.7em;
+  padding-left: 1em;
+}
+.fileuploadlabel:hover {
+  background-color: #8383833e;
+}
+
