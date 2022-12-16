@@ -498,12 +498,17 @@ h3 {
 
 #modal-modal-title {
   font-weight: 700;
-  padding-bottom: 30px;
+  padding-bottom: 1.5em;
 }
 #modal-modal-description {
   font-weight: 700;
-  padding-left: 30px;
-  padding-bottom: 15px;
+  padding-left: 3em;
+}
+.modal-modal-title {
+  padding-bottom: 1em !important;
+}
+.bottom-divider-work-modal {
+  padding-top: 1em;
 }
 .modalDiv__buttons {
   border: 1px solid lightgray;
@@ -533,6 +538,9 @@ h3 {
   border: 1px solid lightgray;
   border-radius: 10px;
   margin-top: 15px;
+}
+.modal__caption {
+  padding-left: 4em;
 }
 /* Footer css */
 

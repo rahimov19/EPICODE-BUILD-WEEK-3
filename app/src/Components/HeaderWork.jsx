@@ -48,7 +48,11 @@ export default function HeaderWork({ title }) {
             </button>
           </div>
           <div className="modalDiv__buttons">
-            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            <Typography
+              id="modal-modal-description"
+              className="modal-modal-title"
+              sx={{ mt: 2 }}
+            >
               Visit More LinkedIn Products
             </Typography>
             <Divider />
@@ -345,57 +349,66 @@ export default function HeaderWork({ title }) {
             </div>
           </div>
           <div className="modalDiv__products">
-            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            <Typography
+              id="modal-modal-description"
+              className="modal-modal-title"
+              sx={{ mt: 2 }}
+            >
               LinkedIn Business Services
             </Typography>
             <Divider />
-          </div>
-          <div className="containerForServices">
-            <div className="modal__service">
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                Talent Solutions
-              </Typography>
-              <Typography variant="caption">
-                Find, attract and recruit talent
-              </Typography>
-            </div>
-            <div className="modal__service">
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                Sales Solutions
-              </Typography>
-              <Typography variant="caption">
-                Unlock sales opportunities
-              </Typography>
-            </div>
-            <div className="modal__service">
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                Post a job for free
-              </Typography>
-              <Typography variant="caption">
-                Get your job in front of quality candidates
-              </Typography>
-            </div>
-            <div className="modal__service">
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                Marketing Solutions
-              </Typography>
-              <Typography variant="caption">
-                Acquire customers and grow your business
-              </Typography>
-            </div>
-            <div className="modal__service">
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                Learning Solutions
-              </Typography>
-              <Typography variant="caption">
-                Develop talent across your organization
-              </Typography>
-            </div>
-            <Divider />
-            <div className="modal__service">
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                Create a Company Page <AddIcon />
-              </Typography>
+
+            <div className="containerForServices">
+              <div className="modal__service">
+                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                  Talent Solutions
+                </Typography>
+                <Typography className="modal__caption" variant="caption">
+                  Find, attract and recruit talent
+                </Typography>
+              </div>
+              <div className="modal__service">
+                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                  Sales Solutions
+                </Typography>
+                <Typography className="modal__caption" variant="caption">
+                  Unlock sales opportunities
+                </Typography>
+              </div>
+              <div className="modal__service">
+                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                  Post a job for free
+                </Typography>
+                <Typography className="modal__caption" variant="caption">
+                  Get your job in front of quality candidates
+                </Typography>
+              </div>
+              <div className="modal__service">
+                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                  Marketing Solutions
+                </Typography>
+                <Typography className="modal__caption" variant="caption">
+                  Acquire customers and grow your business
+                </Typography>
+              </div>
+              <div className="modal__service">
+                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                  Learning Solutions
+                </Typography>
+                <Typography className="modal__caption" variant="caption">
+                  Develop talent across your organization
+                </Typography>
+              </div>
+              <Divider className="bottom-divider-work-modal" />
+              <div className="modal__service">
+                <Typography
+                  id="modal-modal-description"
+                  className="modal-modal-title"
+                  sx={{ mt: 2 }}
+                >
+                  Create a Company Page <AddIcon />
+                </Typography>
+              </div>
             </div>
           </div>
         </Box>
