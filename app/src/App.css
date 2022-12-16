@@ -93,7 +93,6 @@ body {
 
 .list {
   display: flex !important;
-
 }
 .list {
   display: flex;
@@ -108,8 +107,6 @@ body {
   display: flex;
   width: 20rem;
 }
-
-
 
 .list:hover {
   background-color: #e4e4e4;
@@ -315,11 +312,9 @@ body {
   width: 24rem;
   border: 2px solid black;
 
-
   margin-left: 5px;
 
   margin-left: 1em;
-
 }
 
 .header__search > input {
@@ -456,6 +451,66 @@ body {
 }
 .MuiMenu-list {
   width: 300px;
+}
+.headerWork__modal {
+  width: 25rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 1px solid gray !important;
+}
+.headerWork__modal:focus-visible {
+  border: 1px solid gray;
+}
+.topofmodal {
+  display: flex;
+  justify-content: space-between;
+}
+.closeIcon {
+  border: none;
+  padding: 0;
+  height: 30px;
+  background-color: transparent;
+}
+
+#modal-modal-title {
+  font-weight: 700;
+  padding-bottom: 30px;
+}
+#modal-modal-description {
+  font-weight: 700;
+  padding-left: 30px;
+  padding-bottom: 15px;
+}
+.modalDiv__buttons {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+.listofbuttonsmodal {
+  display: flex;
+  flex-wrap: wrap;
+}
+.buttons__modal {
+  padding-top: 20px;
+  padding-left: 20px;
+  text-align: center;
+  width: 80px;
+}
+.buttons__modal > svg {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+.buttons__modal > h3 {
+  padding-top: 5px;
+  white-space: initial;
+  width: 60px;
+  text-align: center;
+}
+.modalDiv__products {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  margin-top: 15px;
 }
 /* Footer css */
 
@@ -853,48 +908,47 @@ body {
 /* Message css */
 .rowMessage {
   width: 400px;
- padding-right: 10rem;
-
+  padding-right: 10rem;
 }
-.forBorder{
+.forBorder {
   border: 1px solid red;
 }
-.rowMessage img{
+.rowMessage img {
   height: 50px;
   width: 50px;
   border-radius: 50%;
   margin-top: 10px;
   /* margin-bottom: 10px; */
- }
- .cardWidth{
-  width:300px;
- }
- .hour {
+}
+.cardWidth {
+  width: 300px;
+}
+.hour {
   position: absolute;
   left: 87%;
   bottom: 8%;
   font-size: 20px;
   color: rgb(0, 0, 0);
 }
-.RemoveBorder{
+.RemoveBorder {
   border: none;
 }
 .message-list input {
-  border: none
+  border: none;
 }
-.sidebar-Home3-images{
+.sidebar-Home3-images {
   /* width: 40px; */
   /* height: 800px; */
   margin-top: 50rem;
 }
 
-.Usersleft{
+.Usersleft {
   margin: 1px;
-width: 400px;
+  width: 400px;
   padding: 0;
   margin-left: -1.3rem;
 }
-.forBorder{
+.forBorder {
   border: 1px solid;
 }
 .main {
@@ -902,8 +956,7 @@ width: 400px;
   margin: 50px auto;
 }
 
-
-.has-search{
+.has-search {
   border: none;
   border-radius: 10px;
   margin: 0;
@@ -917,9 +970,6 @@ width: 400px;
 .has-search .form-control {
   padding-left: 2.375rem;
 }
-.has-search:hover{
-
-}
 
 .has-search .form-control-feedback {
   position: absolute;
@@ -930,11 +980,7 @@ width: 400px;
   line-height: 2.375rem;
   text-align: center;
   pointer-events: none;
-
 }
-
-
-
 
 .authorimg {
   width: 48px;
@@ -1075,5 +1121,3 @@ width: 400px;
   text-decoration: underline;
   color: #004182;
 }
-
-
