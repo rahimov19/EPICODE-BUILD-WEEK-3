@@ -459,6 +459,66 @@ body {
 .MuiMenu-list {
   width: 300px;
 }
+.headerWork__modal {
+  width: 25rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 1px solid gray !important;
+}
+.headerWork__modal:focus-visible {
+  border: 1px solid gray;
+}
+.topofmodal {
+  display: flex;
+  justify-content: space-between;
+}
+.closeIcon {
+  border: none;
+  padding: 0;
+  height: 30px;
+  background-color: transparent;
+}
+
+#modal-modal-title {
+  font-weight: 700;
+  padding-bottom: 30px;
+}
+#modal-modal-description {
+  font-weight: 700;
+  padding-left: 30px;
+  padding-bottom: 15px;
+}
+.modalDiv__buttons {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+.listofbuttonsmodal {
+  display: flex;
+  flex-wrap: wrap;
+}
+.buttons__modal {
+  padding-top: 20px;
+  padding-left: 20px;
+  text-align: center;
+  width: 80px;
+}
+.buttons__modal > svg {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+.buttons__modal > h3 {
+  padding-top: 5px;
+  white-space: initial;
+  width: 60px;
+  text-align: center;
+}
+.modalDiv__products {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  margin-top: 15px;
+}
 /* Footer css */
 
 #footer {
@@ -920,8 +980,7 @@ body {
 .has-search .form-control {
   padding-left: 2.375rem;
 }
-.has-search:hover {
-}
+
 
 .has-search .form-control-feedback {
   position: absolute;
@@ -1082,6 +1141,7 @@ body {
   text-decoration: underline;
   color: #004182;
 }
+
 .postsofuser {
   background-color: white;
   padding: 1em;
@@ -1198,3 +1258,4 @@ body {
 .fileuploadlabel:hover {
   background-color: #8383833e;
 }
+
