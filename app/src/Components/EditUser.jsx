@@ -3,13 +3,37 @@ import { Button, Modal, Form } from "react-bootstrap";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchUserAction } from "../Redux/Actions";
+import { useForm } from "react-hook-form";
 
 export default function EditUser() {
+  const { register, handleSubmit } = useForm();
+  const [image, setImage] = useState(null);
+
   const [show, setShow] = useState(false);
   const user = useSelector((state) => state.user.user);
   const dispatch = useDispatch();
 
   const submitChanges = async () => {
+    const formData = new FormData();
+
+    formData.append("profile", image);
+
+    const options2 = {
+      method: "POST",
+      body: formData,
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk2ZjAzMWM5NmRmYjAwMTUyMWE1YmIiLCJpYXQiOjE2NzA4MzYyODAsImV4cCI6MTY3MjA0NTg4MH0.-mjIeGuDeV798UyGFGMsc5ORRw1nL5qqVP2qkCqN7MY",
+      },
+    };
+
+    try {
+      const endpoint = `https://striveschool-api.herokuapp.com/api/profile/${user._id}/picture`;
+      const response = await fetch(endpoint, options2);
+    } catch (error) {
+      console.log(error);
+    }
+
     const userInformation = {
       _id: user._id,
       name: document.querySelector("#name").value,
@@ -95,6 +119,15 @@ export default function EditUser() {
                 type="text"
                 placeholder="Enter your biology"
                 defaultValue={user.bio}
+              />
+            </Form.Group>
+            <Form.Group controlId="image">
+              <Form.Label>Image*</Form.Label>
+              <Form.Control
+                type="file"
+                {...register("file")}
+                placeholder="Enter your Job Image"
+                onChange={(e) => setImage(e.target.files[0])}
               />
             </Form.Group>
           </Form>

@@ -3,12 +3,13 @@ import AddExperience from "./AddExperience";
 import { useSelector } from "react-redux";
 import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
+import { Col } from "react-bootstrap";
 
 export default function ExperienceUser() {
   const navigate = useNavigate();
   const experienceList = useSelector((state) => state.experience.experience);
   return (
-    <div className="experience">
+    <Col xs={12} className="experience bgWhite w-100 p-4">
       <div className="experienceC4">
         <h4 className="mb-4">Job Experience</h4>
         <div>
@@ -20,11 +21,11 @@ export default function ExperienceUser() {
         </div>
       </div>
       {experienceList[0] ? (
-        experienceList.map((xp) => (
-          <div className="experienceDiv">
+        experienceList.map((xp, i) => (
+          <div className="experienceDiv" key={xp._id}>
             <div className="experienceDivImg">
               <img
-                src={"http://placekitten.com/400"}
+                src={xp.image ? xp.image : "https://placekitten.com/300"}
                 alt={"experience company img"}
               />
             </div>
@@ -43,6 +44,6 @@ export default function ExperienceUser() {
       ) : (
         <div>No experience to show</div>
       )}
-    </div>
+    </Col>
   );
 }

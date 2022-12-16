@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { guestUserAction, fetchExperienceAction } from "../Redux/Actions";
@@ -7,10 +7,13 @@ import { useNavigate } from "react-router-dom";
 import EditUser from "./EditUser";
 import FooterPart from "./FooterPart";
 import ExperienceUser from "./ExperienceUser";
+import PostsUser from "./PostsUser";
 
 export default function Profile() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [userxp, setuserxp] = useState();
+
   const user = useSelector((state) => state.user.user);
   const users = useSelector((state) => state.user.users);
 
@@ -19,8 +22,38 @@ export default function Profile() {
     navigate("/guest/" + profile._id);
   }
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  useEffect(() => {
     dispatch(fetchExperienceAction(user._id));
   }, []);
+
+  useEffect(() => {
+    fetchXp();
+  }, []);
+
+  const fetchXp = async () => {
+    try {
+      let response = await fetch(
+        `https://striveschool-api.herokuapp.com/api/profile/${user._id}/experiences`,
+        {
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk2ZjAzMWM5NmRmYjAwMTUyMWE1YmIiLCJpYXQiOjE2NzA4MzYyODAsImV4cCI6MTY3MjA0NTg4MH0.-mjIeGuDeV798UyGFGMsc5ORRw1nL5qqVP2qkCqN7MY",
+          },
+        }
+      );
+      if (response.ok) {
+        let data = await response.json();
+        setuserxp(data);
+      } else {
+        console.log("error");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <Container id="main">
@@ -37,42 +70,59 @@ export default function Profile() {
                 <EditUser />
               </div>
             </div>
-            <Row className="bgWhite" id="mainrow">
-              <Col xs={9} id="userName" className="pl-5 ">
-                <h3>
-                  {user.name} {user.surname}
-                </h3>
-                <h5>{user.title}</h5>
-                <p>{user.area}</p>
-                <div id="userbuttons">
-                  <Button id="userbutton1"> Interested </Button>
-                  <Button id="userbutton2"> Add something to profile </Button>
-                  <Button id="userbutton3"> More </Button>
+            <Row id="mainrow">
+              <div className="bgWhite d-flex w-100 pb-4">
+                <Col xs={8} id="userName" className="pl-5">
+                  <h3>
+                    {user.name} {user.surname}
+                  </h3>
+                  <h5>{user.title}</h5>
+                  <p>{user.area}</p>
+                  <div id="userbuttons">
+                    <Button id="userbutton1"> Interested </Button>
+                    <Button id="userbutton2"> Add something to profile </Button>
+                    <Button id="userbutton3"> More </Button>
+                  </div>
+                </Col>
+                <Col xs={4} id="companiesCol">
+                  {userxp ? (
+                    userxp.slice(0, 2).map((xp) => (
+                      <>
+                        <div className="companies">
+                          <img
+                            src={
+                              xp.image ? xp.image : "http://placekitten.com/300"
+                            }
+                            alt="company"
+                          ></img>{" "}
+                          <div className="w-100">
+                            <p className="m-0">
+                              <b>{xp.company}</b>
+                            </p>
+                            <p className="m-0">{xp.role}</p>
+                          </div>
+                        </div>
+                      </>
+                    ))
+                  ) : (
+                    <h5>User works nowhere</h5>
+                  )}
+                </Col>
+              </div>
+              <Col xs={12} className={"p-0 mt-2"}>
+                <div className="bgWhite px-4 py-3 w-100">
+                  <h5 className="pl-3">Main Information</h5>
+                  <p className="pl-3 mb-2">{user.bio}</p>
                 </div>
               </Col>
-              <Col xs={3} id="companiesCol">
-                <div className="companies">
-                  <img src="http://placekitten.com/300" alt="company"></img>{" "}
-                  <p>SOME BIG COMPANY</p>
-                </div>
-                <div className="companies">
-                  <img src="http://placekitten.com/300" alt="company"></img>{" "}
-                  <p>SOME small COMPANY</p>
-                </div>
-              </Col>
-              <Col xs={12} className={"ml-5 mt-5"}>
-                <div>
-                  <h5>Main Information</h5>
-                  <p>{user.bio}</p>
-                </div>
-              </Col>
-              <Col xs={12} className={"ml-5 mt-5"}>
+              <Col xs={12} className={"mt-3"}>
                 <ExperienceUser />
+                <PostsUser user={user} />
               </Col>
             </Row>
           </Col>
-          <Col xs={3} className="bgWhite">
-            <div className="mt-4 rightpart ">
+          <Col xs={3} className="bgWhite h-100 pb-3 ">
+            <div className="mt-4 rightpart px-2 ">
               <Row className="mb-3  ">
                 <Col xs={10}>
                   <h5>Change some of data </h5>
@@ -89,7 +139,7 @@ export default function Profile() {
                 <Col xs={2} className={"iconquestionmark"}>
                   <i className="bi bi-question-circle-fill"></i>
                 </Col>
-                <Col xs={12} className={"othersCol"}>
+                <Col xs={12} className={"othersCol px-3"}>
                   <h3 className="mb-3">Check others</h3>
                   {users[0] ? (
                     <div className="otherUsers">

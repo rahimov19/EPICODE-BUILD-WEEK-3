@@ -30,7 +30,7 @@ export default function MainLeft() {
           </div>
         </div>
         <div className="righttoptabs">
-          <i class="bi bi-bookmark-fill"></i>
+          <i className="bi bi-bookmark-fill"></i>
           <p>My Bookmarks </p>
         </div>
       </div>

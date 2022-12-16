@@ -32,10 +32,10 @@ export default function EditExperiemcePage() {
             <div>
               {experienceList[0] ? (
                 experienceList.map((xp) => (
-                  <div className="experienceDiv">
+                  <div className="experienceDiv" key={xp._id}>
                     <div className="experienceDivImg mr-3">
                       <img
-                        src={"http://placekitten.com/400"}
+                        src={xp.image ? xp.image : "http://placekitten.com/400"}
                         alt={"experience company img"}
                       />
                     </div>
