@@ -42,8 +42,8 @@ function Searchbar({ user }) {
   const navigate = useNavigate();
 
   const goToProfile = (guest) => {
-    navigate(`/guest/${guest._id}`);
     dispatch(guestUserAction(guest));
+    navigate(`/guest/${guest._id}`);
   };
 
   const fetchData = async () => {
